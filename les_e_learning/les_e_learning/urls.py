@@ -25,5 +25,5 @@ urlpatterns = [
     path('', include('Visiteur.urls')),
     # path('forum/', include('Forum.urls')),
     # path('membre/', include('Membre.urls')),
-    # path('cours/', include('Cours.urls')),
+    path('cours/', include('Cours.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
