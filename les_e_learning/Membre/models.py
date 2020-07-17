@@ -7,7 +7,7 @@ class Membre(models.Model):
     
 class Cours(models.Model):
     titre = models.CharField(max_length=50)
-    # description = models.TextField()
+    description = models.TextField()
     categorie = models.CharField(max_length=50)
     niveau = models.CharField(max_length=50)
     

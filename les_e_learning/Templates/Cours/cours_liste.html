@@ -12,24 +12,46 @@
     <h3>Cm2 : COURS ( +{{som}} )</h3>
 </div>
 
-<div class="mb-5 ml-5 mr-5">
+<div class="our_latest_blog" style="margin-top: -100px;">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="section_title text-center mb-100">
+                  <h3>Les modules pour tous les niveaux</h3>
+              </div>
+          </div>
+      </div>
 
-    <div class="row">
+      <div class="row">
 
-         {% for i in cours  %}
-            <div class="col-sm-3 mb-5">
-            <div class="card text-center">
-                <div class="card-body">
-                <h5 class="card-title">{{i.titre}}</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="{% url 'Cours_details' %}" class="btn boxed_btn_orange">Go somewhere</a>
-                </div>
-            </div>
-            </div>
-         {% endfor %}
-    </div>
+          {% for i in cours %}
 
-</div>
+              <div class="col-xl-4 col-md-4">
+                  <div class="single_latest_blog">
+                      <div class="thumb">
+                        <a href ="{% url 'Cours_details' i.niveau i.categorie i.titre %}">  <img src="{% static 'img/latest_blog/1.png' %}" alt=""></a>
+                      </div>
+
+                      <div class="content_blog">
+                        <div class="date">
+                            <p>12 Jun, 2019 in <a href="#">Design tips</a></p>
+                        </div>
+                        <div class="blog_meta">
+                            <h3><a href="{% url 'Cours_details' i.niveau i.categorie i.titre %}">{{i.titre}}</a></h3>
+                        </div>
+                        <p class="blog_text">
+                            {{i.description}}
+                        </p>
+                     </div>
+                      
+                  </div>
+              </div>
+
+  
+          {% endfor %}
+
+      </div>
+  </div>
 
 <div class="container mb-5 mt-5">
 

@@ -9,28 +9,51 @@
 
         <!-- bradcam_area_start -->
         <div class="bradcam_area breadcam_bg overlay2">
-            <h3>Cm2 : MODULES ( +{{som}} )</h3>
+            <h3>{{niveau}} : MODULES ( +{{som}} )</h3>
         </div>
         <!-- bradcam_area_end -->
         
-      <div class="container section-top-border">
-
-        {% for cat in categorie %}
-
-            <div class="card text-center mt-3 mb-5">
-                <div class="card-header">
-                Module
+        <div class="our_latest_blog" style="margin-top: -100px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-100">
+                            <h3>Les modules pour tous les niveaux</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                <h2 class="card-title">{{ cat.categorie }}</h2>
-                <a href="{% url 'Cours_liste' %}" class="btn btn-primary">visiter les cours du module</a>
-                </div>
-                <div class="card-footer text-muted">
-                2 days ago
+
+                <div class="row">
+
+                    {% for cat in categorie %}
+
+                        <div class="col-xl-4 col-md-4">
+                            <div class="single_latest_blog">
+                                <div class="thumb">
+                                  <a href ="{% url 'Cours_liste' niveau cat.categorie %}">  <img src="{% static 'img/latest_blog/1.png' %}" alt=""></a>
+                                </div>
+                                <div class="content_blog">
+                                    <div class="date">
+                                        <h4>Niveau : {{cat.niveau}}</h4>
+                                    </div>
+                                    <div class="blog_meta">
+                                        <h3><a href="{% url 'Cours_liste' niveau cat.categorie %}">{{cat.categorie}}</a></h3>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+
+            
+                    {% endfor %}
+
                 </div>
             </div>
+        
 
-          {% endfor %}
+       
+
+          
 
           
     <nav aria-label="Page navigation example">

@@ -79,12 +79,15 @@
         <div class="container">
             <div class="row">
 
+                {% for niv in niveau  %}
+    
+
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_team">
                         <div class="thumb">
                                 <img  src="{%  static 'img/team/1.png' %}" alt="">
                             <div class="social_link">
-                                <a href="{% url 'Cours_cat' %}"><i class="fa fa-book"></i> <h1>Cm2</h1></a>
+                                <a href="{% url 'Cours_cat' niv.niveau %}"><i class="fa fa-book"></i> <h1>{{niv.niveau}}</h1></a>
                                 
                             </div>
                         </div>
@@ -92,30 +95,10 @@
                     </div>
                 </div>
 
+                {% endfor %}
 
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_team">
-                        <div class="thumb">
-                            <img src="{%  static 'img/team/1.png' %}" alt="">
-                            <div class="social_link">
-                                <h1>Troisieme</h1>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
 
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_team">
-                        <div class="thumb">
-                            <img src="{%  static 'img/team/1.png' %}" alt="">
-                            <div class="social_link">
-                                <h1>Terminale</h1>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
+            
                 
             </div>
         </div>
