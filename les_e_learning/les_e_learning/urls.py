@@ -23,7 +23,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Visiteur.urls')),
-    # path('forum/', include('Forum.urls')),
-    # path('membre/', include('Membre.urls')),
+    path('forum/', include('Forum.urls')),
+    #path('membre/', include('Membre.urls')),
     path('cours/', include('Cours.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

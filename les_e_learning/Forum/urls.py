@@ -1,14 +1,9 @@
+from django.contrib import admin
+from django.urls import path, include
+from Forum import views
 
-# from django.contrib import admin
-# from django.urls import path
-# from . import views
-# from django.conf.urls.static import static
-# from django.conf import settings
-# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-# urlpatterns = [
-
-#     path('post/',views.Post, name = "Post" ),
-    
-    
-# ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = [
+    path("blog",views.posts,name="home"),
+    path("detail_publication/<int:id>",views.detail_post,name="detail_post"),
+    path("like_post",views.like_post,name="like_post")
+]
