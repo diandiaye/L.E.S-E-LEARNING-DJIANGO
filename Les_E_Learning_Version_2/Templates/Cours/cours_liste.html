@@ -13,7 +13,7 @@
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
                             <h2>Notre Catalogue de Cours</h2>
-                            <p>Accueil<span>/</span>Cours</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -43,30 +43,21 @@
              
                 <div class="col-sm-6 col-lg-4 mb-5">
                     <div class="single_special_cource">
-                        <img src="{% static 'img/special_cource_1.png' %}" class="special_img" alt="">
+                    <a  href="{% url 'Cours_details' i.niveau i.categorie i.titre %}"> <img src="{% static 'img/special_cource_1.png' %}" class="special_img" alt=""></a>  
                         <div class="special_cource_text">
                             <a href="{% url 'Cours_details' i.niveau i.categorie i.titre %}" class="btn_4">{{i.titre}}</a>
-                            <h4>$130.00</h4>
-                            <a href="course-details.html"><h3>{{i.titre}}</h3></a>
-                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                           
+        
                             <div class="author_info">
                                 <div class="author_img">
-                                    <img src="{% static 'img/author/author_1.png' %}" alt="">
+                    
                                     <div class="author_info_text">
-                                        <p>Conduct by:</p>
-                                        <h5><a href="#">James Well</a></h5>
+                                        <p>Suivi par : 50 personnes</p>
+                                        <p class="ti-heart">  : 50 personnes</p>
+                
                                     </div>
                                 </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'img/icon/star.svg' %}" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -80,6 +71,55 @@
         </div>
     </section>
     <!--::blog_part end::-->
+
+    <nav aria-label="Page navigation example">
+        {% if cours.has_other_pages %}
+  
+          <ul class="pagination justify-content-center">
+  
+            {% if cours.has_previous %}
+  
+            <li class="page-item">
+              <a class="page-link active" href="?page={{ cours.previous_page_number }}">Previous</a>
+            </li>
+  
+            {% else %}
+  
+            <li class="disabled page-link"><span>Previous</span></li>
+  
+            {% endif %}
+  
+            {% for i in cours.paginator.page_range %}
+  
+            {% if cours.number == i %}
+  
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+  
+            {% else %}
+  
+            <li class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+  
+            {% endif %}
+  
+            {% endfor %}
+  
+            {% if cours.has_next %}
+  
+            <li class="page-item">
+              <a class="page-link" href="?page={{ cours.next_page_number }}">Next</a>
+            </li>
+  
+            {% else %}
+  
+            <li class="disabled page-link"><span>Next</span></li>
+  
+            {% endif %}
+          </ul>
+  
+          {% endif %}
+  
+        </nav>
+
 
 
 

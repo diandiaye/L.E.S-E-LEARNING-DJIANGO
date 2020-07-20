@@ -13,7 +13,7 @@
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
                             <h2>Notre Catalogue de Cours</h2>
-                            <p>Accueil<span>/</span>Cours</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -58,6 +58,53 @@
     </section>
     <!--::blog_part end::-->
 
+    <nav aria-label="Page navigation example">
+        {% if categorie.has_other_pages %}
+  
+          <ul class="pagination justify-content-center">
+  
+            {% if categorie.has_previous %}
+  
+            <li class="page-item">
+              <a class="page-link active" href="?page={{ categorie.previous_page_number }}">Previous</a>
+            </li>
+  
+            {% else %}
+  
+            <li class="disabled page-link"><span>Previous</span></li>
+  
+            {% endif %}
+  
+            {% for i in categorie.paginator.page_range %}
+  
+            {% if categorie.number == i %}
+  
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+  
+            {% else %}
+  
+            <li class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+  
+            {% endif %}
+  
+            {% endfor %}
+  
+            {% if categorie.has_next %}
+  
+            <li class="page-item">
+              <a class="page-link" href="?page={{ categorie.next_page_number }}">Next</a>
+            </li>
+  
+            {% else %}
+  
+            <li class="disabled page-link"><span>Next</span></li>
+  
+            {% endif %}
+          </ul>
+  
+          {% endif %}
+  
+        </nav>
 
 
     <!--::review_part start::-->

@@ -8,6 +8,16 @@ from django.db.models import Q
 
 def Cours_niveau(request):
     niveau = Membre.objects.all().distinct()
+    paginator = Paginator(niveau, 6)
+    page = request.GET.get('page', 1)
+    try:
+            
+            niveau = paginator.page(page)
+      
+    except PageNotAnInteger:
+            niveau = paginator.page(1)
+    except EmptyPage:
+            niveau = paginator.page(paginator.num_pages)
     return render(request, "Cours/course_niveau.html", locals())
 
 def Cours_cat(request, niveau):

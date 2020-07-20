@@ -1,0 +1,56 @@
+{% extends "Layouts/base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Notre Tableau de Bord</h2>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    
+
+    <!--================ Start Course Details Area =================-->
+    <section class="course_details_area section_padding">
+        <div class="container">
+            <div class="row container text-center">
+                <h1 class="title">Les cours suivis</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12 course_details_left">
+                    <div class="content_wrapper">
+                        <div class="content">
+                            <ul class="course_list">
+                                
+                                <li class="justify-content-between align-items-center d-flex">
+                                    
+                                    <p>Terminal</p>
+                                    <p>Developpement WEB</p>
+                                    <p>Django Framework</p>
+                                    <a class="btn_2 text-uppercase" href="#">Voir Cours</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Course Details Area =================-->
+    {% endblock content %}

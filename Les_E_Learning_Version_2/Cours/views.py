@@ -26,7 +26,7 @@ def Cours_module(request, niveau):
     
     categorie = Cours.objects.filter(niveau = niveau).values('categorie').distinct()
     som = categorie.count()
-    paginator = Paginator(categorie, 5)
+    paginator = Paginator(categorie, 6)
     page = request.GET.get('page', 1)
     try:
             
@@ -43,7 +43,7 @@ def Cours_module(request, niveau):
 def Cours_liste(request, niveau, categorie):
     cours = Cours.objects.filter(Q(niveau = niveau), Q(categorie = categorie))
     som = cours.count()
-    paginator = Paginator(cours, 12)
+    paginator = Paginator(cours, 6)
     page = request.GET.get('page', 1)
     try:
             
@@ -59,4 +59,22 @@ def Cours_liste(request, niveau, categorie):
 
 def Cours_details(request,niveau, categorie, titre):
     cours = Cours.objects.get(Q(titre = titre), Q(niveau = niveau), Q(categorie = categorie))
+    documents = Documents_Cours.objects.filter(Q(cours = cours))
+    som = documents.count()
+    paginator = Paginator(documents, 5)
+    page = request.GET.get('page', 1)
+    try:
+            
+            documents = paginator.page(page)
+      
+    except PageNotAnInteger:
+            documents = paginator.page(1)
+    except EmptyPage:
+            documents = paginator.page(paginator.num_pages)
     return render(request, "Cours/cours-details.html", locals())
+
+
+    
+def Tableau_bord(request):
+     return render(request, "Cours/tableau_bord.html")
+        
