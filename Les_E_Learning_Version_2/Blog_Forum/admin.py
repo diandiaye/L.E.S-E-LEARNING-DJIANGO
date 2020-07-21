@@ -13,3 +13,4 @@ class TagAdmin(admin.ModelAdmin):
 admin.site.register(Post,PostAdmin)
 admin.site.register(Comments,CommentAdmin)
 admin.site.register(Tag,TagAdmin)
+
