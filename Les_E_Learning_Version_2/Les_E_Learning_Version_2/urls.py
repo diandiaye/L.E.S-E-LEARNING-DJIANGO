@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from .views import GeneratePdf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path('blog/', include('Blog_Forum.urls')),
     path('compte/', include('Membre.urls')),
     path('cours/', include('Cours.urls')),
+    path('blog/poeme/<int:id>',GeneratePdf.as_view(),name="single_poeme")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

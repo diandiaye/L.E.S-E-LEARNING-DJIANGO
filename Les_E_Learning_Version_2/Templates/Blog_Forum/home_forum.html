@@ -1,0 +1,234 @@
+{% extends "Layouts/base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Bienvenue</h2>
+                            <p>Forum<span>/</span>Discussion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end -->
+    <!-- Navbar -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'forum' %}">Forum(All)</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form method="GET">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Education">Education</button>
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Politique">Politique</button>
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Economie">Economie</button>
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Religion">Religion</button>
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Santé">Santé</button>
+                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Sport">Sport</button>
+                </div>
+            </div>
+            </form>
+            </nav>
+        </div>
+    </div>
+    <!-- End Navbar-->
+    <div class="container mt-2 mb-2">
+        <div class="row justify-content-center">
+            <button type="button" class="genric-btn primary circle e-large" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Créer une discussion
+            </button>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="collapse mt-1" id="collapseExample">
+                    <div class="card card-body">
+                        <form method="POST">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="genric-btn primary">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--================Forum Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                    {% for m in messages %}
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="media flex-wrap w-100 align-items-center"> 
+                                    <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+                                    <div class="media-body ml-3"> <a href="#" data-abc="true">{{m.author.first_name}} {{m.author.last_name}}</a>
+                                        <div class="text-muted small"><i class=""></i> <span>En ligne:</span> {{m.author.last_login|date:"H:m"}}</div>
+                                    </div>
+                                    <div class="text-muted small ml-3">
+                                        <div>Membre depuis <strong>{{m.author.date_joined|date:"d/m/Y"}}</strong></div>
+                                        <div><strong>134</strong> posts</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    {{m.message|linebreaksbr}} 
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                <div class="px-4 pt-3"> <a href="#" class="text-muted d-inline-flex align-items-center align-middle" data-abc="true">
+                                <form method="POST" action="{% url 'like_msg' %}">
+                                {% csrf_token %}
+                                {% if is_liked %}
+                                <button class="genric-btn danger-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart text-danger" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> 
+                                {% else %}
+                                <button class="genric-btn info-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> 
+                                {% endif %}
+                                </form>
+                                </div>
+                                <div class="px-4 pt-3"> <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseRepondreMessage" aria-expanded="false" aria-controls="collapseRepondreMessage"><i class="ion ion-md-create"></i>&nbsp; Répondre</button> </div>
+                            </div>
+                            <div class="collapse" id="collapseRepondreMessage">
+                                <div class="card card-body">
+                                <form method="POST">
+                                    <div class="form-group">
+                                    <textarea classe="form-control" rows="1" name="reponse" placeholder="répondre ici ....."></textarea>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="comment-list">
+                     <div class="single-comment justify-content-between d-flex">
+                        <div class="user justify-content-between d-flex">
+                           <div class="desc">
+                              <p class="comment text-center">
+                                 Aucune discussion trouvée après la recherche de <q>{{ request.GET.q }}</q>s
+                              </p> 
+                           </div>
+                        </div>
+                     </div>
+                    </div>
+                    {% endfor %}
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                {% if messages.has_previous %}
+                                <li class="page-item">
+                                    <a href="?page={{ messages.previous_page_number }}" class="page-link" aria-label="Previous">
+                                        &laquo;
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% for m in messages.paginator.page_range %}
+                                {% if messages.number == p  %}
+                                <li class="page-item active"><a class="page-link" href="?page={{m}}">{{m}}</a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{m}}">{{m}}</a></li>
+                                {% endif %}
+                                {% endfor %}
+                                {% if messages.has_next %}
+                                <li class="page-item">
+                                    <a href="?page={{ messages.next_page_number }}" class="page-link" aria-label="Next">
+                                        &raquo;
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form method="GET">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder='Recherche ...' name="q">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="button"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Search</button>
+                            </form>
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Publications récentes</h3>
+                            {% for rm in r_messages %}
+                            <div class="media post_item">
+                                {% if rp.photo %}
+                                <img src="{{rp.photo.url}}" alt="author">
+                                {% else %}
+                                <img src="img/post/post_1.png" alt="author">
+                                {% endif %}
+                                <div class="media-body">
+                                    <a>
+                                        <h3>{{rm.message|truncatewords:"15"}}</h3>
+                                    </a>
+                                    <p>{{rm.added|date:'d/m/Y'}}</p>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <div class="media post_item">
+                                <div class="media-body">
+                                    <h3>Aucune publication</h3>
+                                    <p>récente</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </aside>
+                        <aside class="single_sidebar_widget instagram_feeds">
+                        <h4 class="widget_title">Belles plumes</h4>
+                        <ul class="flex-wrap">
+                            {% for p in poemes %}
+                            <li>
+                            <a href="{% url 'single_poeme' p.id %}">
+                                <h6><i class="fa fa-pencil"></i> {{p.titre}}</h6>
+                            </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </aside>
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Newsletter</h4>
+
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Subscribe</button>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Forum Area =================-->
+{% endblock content %}
