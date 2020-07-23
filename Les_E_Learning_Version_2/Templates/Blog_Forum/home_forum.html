@@ -44,6 +44,20 @@
         </div>
     </div>
     <!-- End Navbar-->
+    {% if messages %}
+   <div class="container mt-2">
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+      </ul>
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+   </button>
+   </div>
+   </div>
+   {% endif %}
     <div class="container mt-2 mb-2">
         <div class="row justify-content-center">
             <button type="button" class="genric-btn primary circle e-large" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -54,12 +68,22 @@
             <div class="col-md-6">
                 <div class="collapse mt-1" id="collapseExample">
                     <div class="card card-body">
-                        <form method="POST">
+                        <form method="POST" action="{% url 'add_message' %}">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Message</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
                         </div>
-                        
+                        <div class="form-select text-danger mb-1" id="default-select" style="font-size:14px">
+                            <select class="select" name="sujet">
+                            <option value="Education">Education</option>
+                            <option value="Politique">Politique</option>
+                            <option value="Economie">Economie</option>
+                            <option value="Santé">Santé</option>
+                            <option value="Religion">Religion</option>
+                            <option value="Sport">Sport</option>
+                            </select>
+						</div>
                         <button type="submit" class="genric-btn primary">Envoyer</button>
                         </form>
                     </div>
@@ -74,18 +98,18 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
-                    {% for m in messages %}
+                    {% for m,rp in discuss %}
                     <div class="col-md-12">
                         <div class="card mb-4">
                             <div class="card-header">
                                 <div class="media flex-wrap w-100 align-items-center"> 
-                                    <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+                                    <img src="{% static 'img/default_avatar.png' %}" class="d-block ui-w-40 rounded-circle" alt="" width="44" height="44">
                                     <div class="media-body ml-3"> <a href="#" data-abc="true">{{m.author.first_name}} {{m.author.last_name}}</a>
-                                        <div class="text-muted small"><i class=""></i> <span>En ligne:</span> {{m.author.last_login|date:"H:m"}}</div>
+                                        <div class="text-muted small"><i class="fa fa-dot-circle-o text-success"></i> <span>En ligne:</span> {{m.author.last_login|date:"D M H:m"}}</div>
                                     </div>
                                     <div class="text-muted small ml-3">
                                         <div>Membre depuis <strong>{{m.author.date_joined|date:"d/m/Y"}}</strong></div>
-                                        <div><strong>134</strong> posts</div>
+                                        <div><strong class="text-danger">{{m.subjet}}</strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -99,20 +123,40 @@
                                 <form method="POST" action="{% url 'like_msg' %}">
                                 {% csrf_token %}
                                 {% if is_liked %}
-                                <button class="genric-btn danger-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart text-danger" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> 
+                                <button class="genric-btn danger-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart text-danger" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-comments text-muted fsize-3"></i>&nbsp; <span class="align-middle">{{rp|length}}</span> </span> 
                                 {% else %}
-                                <button class="genric-btn info-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> 
+                                <button class="genric-btn info-border circle arrow" type="submit" name="msg_id" value="{{m.id}}"><i class="fa fa-heart" style="font-size:16px;"></i></button>&nbsp; <span class="align-middle">{{m.total_likes}}</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-comments text-muted fsize-3"></i>&nbsp; <span class="align-middle">{{rp|length}}</span> </span> 
                                 {% endif %}
                                 </form>
                                 </div>
                                 <div class="px-4 pt-3"> <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseRepondreMessage" aria-expanded="false" aria-controls="collapseRepondreMessage"><i class="ion ion-md-create"></i>&nbsp; Répondre</button> </div>
                             </div>
                             <div class="collapse" id="collapseRepondreMessage">
-                                <div class="card card-body">
-                                <form method="POST">
-                                    <div class="form-group">
-                                    <textarea classe="form-control" rows="1" name="reponse" placeholder="répondre ici ....."></textarea>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12">
+                                        {% for r in rp %}
+                                        <div class="d-none d-md-block col-12 mb-1">
+                                            <div class="row no-gutters">
+                                                <div class="col-3 text-center mt-2"><i class="fa fa-reply-all"></i></div>
+                                                <div class="media col-9"> <img src="{% static 'img/default_avatar.png' %}" alt="" class="d-block ui-w-30 rounded-circle" width="44" height="44">
+                                                    <div class="media-body ml-2"> 
+                                                    <span class="">{{r.reponse}}</span>
+                                                    <div class="text-muted small">{{r.added|date:"D M H:m"}} &nbsp;·&nbsp; <a href="#" class="text-muted" data-abc="true">{{r.author.first_name}} {{r.author.last_name}}</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
                                     </div>
+                                </div>
+                                <div class="card card-body">
+                                <form method="POST" action="{% url 'add_reponse' m.id %}">
+                                {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Message</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="reponse"></textarea>
+                                    </div>
+                                    <button class="float-right genric-btn danger" type="submit">Envoyer</button>
                                 </form>
                                 </div>
                             </div>
@@ -131,31 +175,6 @@
                      </div>
                     </div>
                     {% endfor %}
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                {% if messages.has_previous %}
-                                <li class="page-item">
-                                    <a href="?page={{ messages.previous_page_number }}" class="page-link" aria-label="Previous">
-                                        &laquo;
-                                    </a>
-                                </li>
-                                {% endif %}
-                                {% for m in messages.paginator.page_range %}
-                                {% if messages.number == p  %}
-                                <li class="page-item active"><a class="page-link" href="?page={{m}}">{{m}}</a></li>
-                                {% else %}
-                                <li class="page-item"><a class="page-link" href="?page={{m}}">{{m}}</a></li>
-                                {% endif %}
-                                {% endfor %}
-                                {% if messages.has_next %}
-                                <li class="page-item">
-                                    <a href="?page={{ messages.next_page_number }}" class="page-link" aria-label="Next">
-                                        &raquo;
-                                    </a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -180,17 +199,13 @@
                             <h3 class="widget_title">Publications récentes</h3>
                             {% for rm in r_messages %}
                             <div class="media post_item">
-                                {% if rp.photo %}
-                                <img src="{{rp.photo.url}}" alt="author">
-                                {% else %}
-                                <img src="img/post/post_1.png" alt="author">
-                                {% endif %}
                                 <div class="media-body">
                                     <a>
                                         <h3>{{rm.message|truncatewords:"15"}}</h3>
                                     </a>
                                     <p>{{rm.added|date:'d/m/Y'}}</p>
                                 </div>
+                                <hr>
                             </div>
                             {% empty %}
                             <div class="media post_item">
@@ -211,6 +226,7 @@
                             </a>
                             </li>
                             {% endfor %}
+                            <li><a href="{% url 'poemes' %}" class="text-center"><h6 class="text-primary"><i class="fa fa-plus"></i> Voir plus</h6></a></li>
                         </ul>
                         </aside>
                         <aside class="single_sidebar_widget newsletter_widget">
