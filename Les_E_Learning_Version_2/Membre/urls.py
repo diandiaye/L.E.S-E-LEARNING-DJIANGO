@@ -12,4 +12,4 @@ urlpatterns = [
     path('connection',views.Connection, name = "Connection" ),
     
     
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROO
+]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
