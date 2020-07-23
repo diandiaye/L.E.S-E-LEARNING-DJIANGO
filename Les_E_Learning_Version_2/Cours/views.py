@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from Membre.models import *
 from .models import *
+from .forms import *
 from django.utils.text import slugify 
 from django.db.models import Q
 
@@ -43,7 +44,7 @@ def Cours_module(request, niveau):
 def Cours_liste(request, niveau, categorie):
     cours = Cours.objects.filter(Q(niveau = niveau), Q(categorie = categorie))
     som = cours.count()
-    paginator = Paginator(cours, 6)
+    paginator = Paginator(cours, 12)
     page = request.GET.get('page', 1)
     try:
             
@@ -61,6 +62,14 @@ def Cours_details(request,niveau, categorie, titre):
     cours = Cours.objects.get(Q(titre = titre), Q(niveau = niveau), Q(categorie = categorie))
     documents = Documents_Cours.objects.filter(Q(cours = cours))
     som = documents.count()
+    
+    enrollCours = {
+             'membre' : request.user.id,
+             'cours' : cours.id   
+     }
+    form = Membre_Cours_Form(enrollCours)
+    form.save()
+     
     paginator = Paginator(documents, 5)
     page = request.GET.get('page', 1)
     try:
@@ -76,5 +85,7 @@ def Cours_details(request,niveau, categorie, titre):
 
     
 def Tableau_bord(request):
+        
      return render(request, "Cours/tableau_bord.html")
+
         

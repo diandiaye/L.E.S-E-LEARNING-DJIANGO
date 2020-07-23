@@ -12,11 +12,7 @@ class Cours(models.Model):
         return self.titre
     
 class Membre_Cours(models.Model):
-    enroll_date = models.DateTimeField(auto_now=False, auto_now_add=False)
-    impression = models.TextField()
-    nombre_like = models.IntegerField()
-    nombre_dislike = models.IntegerField()
-    Membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
+    membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
     cours = models.ForeignKey(Cours, on_delete=models.CASCADE)
     
 class Documents_Cours(models.Model):

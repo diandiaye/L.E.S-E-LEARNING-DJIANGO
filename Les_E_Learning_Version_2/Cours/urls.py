@@ -14,6 +14,4 @@ urlpatterns = [
     path('<slug:niveau>/<str:categorie>/<str:titre>',views.Cours_details, name = "Cours_details" ),
   
     
-    
-    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

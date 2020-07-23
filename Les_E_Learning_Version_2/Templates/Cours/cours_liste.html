@@ -43,11 +43,13 @@
              
                 <div class="col-sm-6 col-lg-4 mb-5">
                     <div class="single_special_cource">
-                    <a  href="{% url 'Cours_details' i.niveau i.categorie i.titre %}"> <img src="{% static 'img/special_cource_1.png' %}" class="special_img" alt=""></a>  
+                     <img src="{% static 'img/special_cource_1.png' %}" class="special_img" alt="">
                         <div class="special_cource_text">
-                            <a href="{% url 'Cours_details' i.niveau i.categorie i.titre %}" class="btn_4">{{i.titre}}</a>
+                            <a href="{% url 'Cours_details' i.niveau i.categorie i.titre %}" class="btn_4">Suivre le cours</a>
                            
-        
+                            <h3>{{i.titre}}</h3>
+                            <p>{{i.description}}</p>
+
                             <div class="author_info">
                                 <div class="author_img">
                     
@@ -71,55 +73,31 @@
         </div>
     </section>
     <!--::blog_part end::-->
-
-    <nav aria-label="Page navigation example">
-        {% if cours.has_other_pages %}
-  
-          <ul class="pagination justify-content-center">
-  
+    <nav class="blog-pagination justify-content-center d-flex">
+        <ul class="pagination">
             {% if cours.has_previous %}
-  
             <li class="page-item">
-              <a class="page-link active" href="?page={{ cours.previous_page_number }}">Previous</a>
+                <a href="?page={{ cours.previous_page_number }}" class="page-link" aria-label="Previous">
+                    &laquo;
+                </a>
             </li>
-  
-            {% else %}
-  
-            <li class="disabled page-link"><span>Previous</span></li>
-  
             {% endif %}
-  
-            {% for i in cours.paginator.page_range %}
-  
-            {% if cours.number == i %}
-  
-            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-  
+            {% for p in cours.paginator.page_range %}
+            {% if cours.number == p  %}
+            <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
             {% else %}
-  
-            <li class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-  
+            <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
             {% endif %}
-  
             {% endfor %}
-  
             {% if cours.has_next %}
-  
             <li class="page-item">
-              <a class="page-link" href="?page={{ cours.next_page_number }}">Next</a>
+                <a href="?page={{ cours.next_page_number }}" class="page-link" aria-label="Next">
+                    &raquo;
+                </a>
             </li>
-  
-            {% else %}
-  
-            <li class="disabled page-link"><span>Next</span></li>
-  
             {% endif %}
-          </ul>
-  
-          {% endif %}
-  
-        </nav>
-
+        </ul>
+    </nav>
 
 
 

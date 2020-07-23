@@ -61,53 +61,34 @@
     </section>
     <!--::blog_part end::-->
 
-    <nav aria-label="Page navigation example">
-        {% if niveau.has_other_pages %}
-  
-          <ul class="pagination justify-content-center">
-  
+
+    <nav class="blog-pagination justify-content-center d-flex">
+        <ul class="pagination">
             {% if niveau.has_previous %}
-  
             <li class="page-item">
-              <a class="page-link active" href="?page={{ niveau.previous_page_number }}">Previous</a>
+                <a href="?page={{ niveau.previous_page_number }}" class="page-link" aria-label="Previous">
+                    &laquo;
+                </a>
             </li>
-  
-            {% else %}
-  
-            <li class="disabled page-link"><span>Previous</span></li>
-  
             {% endif %}
-  
-            {% for i in niveau.paginator.page_range %}
-  
-            {% if niveau.number == i %}
-  
-            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-  
+            {% for p in niveau.paginator.page_range %}
+            {% if niveau.number == p  %}
+            <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
             {% else %}
-  
-            <li class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-  
+            <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
             {% endif %}
-  
             {% endfor %}
-  
             {% if niveau.has_next %}
-  
             <li class="page-item">
-              <a class="page-link" href="?page={{ niveau.next_page_number }}">Next</a>
+                <a href="?page={{ niveau.next_page_number }}" class="page-link" aria-label="Next">
+                    &raquo;
+                </a>
             </li>
-  
-            {% else %}
-  
-            <li class="disabled page-link"><span>Next</span></li>
-  
             {% endif %}
-          </ul>
+        </ul>
+    </nav>
+
   
-          {% endif %}
-  
-        </nav>
 
 
 
