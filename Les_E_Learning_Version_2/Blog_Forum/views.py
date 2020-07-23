@@ -108,20 +108,15 @@ def home_forum(request):
             Q(author__last_name__icontains=query)|
             Q(author__first_name__icontains=query)
         )
-    paginator = Paginator(messages_list,10)
-    page = request.GET.get('page')
-    try : 
-        messages = paginator.page(page)
-    except PageNotAnInteger:
-        messages = paginator.page(1)
-    except EmptyPage:
-        messages = paginator.page(paginator.num_pages)
+    discuss = {}
+    for m in messages_list:
+        discuss[m] = Reponse.objects.filter(message=m)
     is_liked = False
     for m in messages_list:
         if m.likes.filter(id=request.user.id).exists():
             is_liked = True
     context = {
-        "messages":messages,
+        "discuss":discuss.items(),
         "poemes":poemes,
         "is_liked":is_liked,
         "r_messages":r_messages
@@ -140,3 +135,57 @@ def like_msg(request):
         message.likes.add(request.user)
         is_liked = True
     return redirect("forum")
+
+@login_required
+def add_reponse(request,id):
+    if request.method == "POST":
+        msg = get_object_or_404(Message,id=id)
+        reponse = request.POST['reponse']
+
+        rps = Reponse()
+        rps.message = msg
+        rps.reponse = reponse
+        rps.author = request.user
+        rps.save()
+        messages.success(request,"Votre réponse a été ajouté avec succès !")
+    return redirect("forum")
+
+@login_required
+def add_message(request):
+    if request.method == "POST":
+        message = request.POST['message']
+        sujet = request.POST['sujet']
+
+        msg = Message()
+        msg.subjet = sujet
+        msg.author = request.user
+        msg.message = message
+        msg.save()
+        messages.success(request,"Votre message a été ajouté avec succès !")
+    return redirect("forum")
+
+def poemes(request):
+    query = request.GET.get('q')
+    list_poemes = Poeme.objects.all().order_by('-id')
+    r_poemes = Poeme.objects.all().order_by('-id')[:4]
+    r_posts = Post.objects.all().order_by('-id')[:3]
+    if query:
+        list_poemes = Poeme.objects.filter(
+            Q(titre__icontains=query)|
+            Q(auteur__first_name__icontains=query)|
+            Q(contenu__icontains=query)
+        )
+    paginator = Paginator(list_poemes,5)
+    page = request.GET.get('page')
+    try : 
+        poemes = paginator.page(page)
+    except PageNotAnInteger:
+        poemes = paginator.page(1)
+    except EmptyPage:
+        poemes = paginator.page(paginator.num_pages)
+    context = {
+        'poemes':poemes,
+        'r_poemes':r_poemes,
+        'r_posts':r_posts
+    }
+    return render(request,'Blog_Forum/belle_plume.html',context)    

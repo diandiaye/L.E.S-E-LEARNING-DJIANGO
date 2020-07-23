@@ -8,4 +8,7 @@ urlpatterns = [
     path("like_post",views.like_post,name="like_post"),
     path("forum",views.home_forum,name="forum"),
     path("like_msg",views.like_msg,name="like_msg"),
+    path("add_message",views.add_message,name="add_message"),
+    path("add_reponse/<int:id>",views.add_reponse,name="add_reponse"),
+    path("poemes",views.poemes,name="poemes"),
 ]

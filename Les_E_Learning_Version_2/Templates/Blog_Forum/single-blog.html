@@ -27,7 +27,7 @@
    <div class="alert alert-success alert-dismissible fade show" role="alert">
       <ul class="messages">
       {% for message in messages %}
-      <li></li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
       {% endfor %}
       </ul>
    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -87,7 +87,6 @@
                         <a href="#">
                            <h4>{{post.author.first_name}} {{post.author.last_name}}</h4>
                         </a>
-                        <p>Bio....(to add)</p>
                      </div>
                   </div>
                </div>
@@ -225,6 +224,7 @@
                            </a>
                         </li>
                         {% endfor %}
+                        <li><a href="{% url 'poemes' %}" class="text-center"><h6 class="text-primary"><i class="fa fa-plus"></i> Voir plus</h6></a></li>
                      </ul>
                   </aside>
                   <aside class="single_sidebar_widget newsletter_widget">
