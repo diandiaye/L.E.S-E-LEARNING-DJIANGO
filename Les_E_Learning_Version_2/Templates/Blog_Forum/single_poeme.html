@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta charset="uft8">
+        <title>LES</title>
+        <style type="text/css">
+            .title {
+                margin-top: 10px;
+                text-align: center;
+            }
+            .content {
+                font-size: large;
+                line-height: 25px;
+                text-align: center;
+            }
+            .footer h3 {
+                text-align: right;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Les élites sénégalaises</h1>
+        <div class="title">
+            <h1>{{pm.titre}}</h1>
+        </div>
+        <div class="content">
+            <p>
+                {{pm.contenu|linebreaksbr}}
+            </p>
+        </div>
+        <div class="footer">
+            <h3>{{pm.auteur.first_name}} {{pm.auteur.last_name}}</h3>
+        </div>
+    </body>
+</html>

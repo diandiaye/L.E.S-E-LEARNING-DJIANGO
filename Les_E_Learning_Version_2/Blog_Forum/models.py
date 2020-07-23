@@ -41,3 +41,50 @@ class Comments(models.Model):
     def __str__(self):
         return self.user.username
 
+
+############################### Forum ##################################
+
+class Message(models.Model):
+    sjt = (
+        ("Politique","politique"),
+        ("Education","education"),
+        ("Economie","économie"),
+        ("Santé","santé"),
+        ("Sport","sport"),
+        ("Religion","religion")
+    )
+    subjet = models.CharField(max_length=10,choices=sjt)
+    message = models.TextField()
+    likes = models.ManyToManyField(User,related_name="likes_message")
+    added = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def total_likes(self):
+        return self.likes.count()
+
+    def __str__(self):
+        return self.author.username
+
+class Reponse(models.Model):
+    message = models.ForeignKey(Message,on_delete=models.CASCADE)
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    reponse = models.TextField()
+    added = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField(User,related_name="likes_reponse")
+
+    def __str__(self):
+        return self.message.subjet
+    
+    def total_likes(self):
+        return self.likes.count()
+
+############################## Belles plumes ##################################
+
+# Les poemes 
+class Poeme(models.Model):
+    titre = models.CharField(max_length=300)
+    contenu = models.TextField()
+    auteur = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.titre

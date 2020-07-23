@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 from django.db.models import Q 
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.contrib.auth.decorators import login_required
-from datetime import datetime
-
 
 def posts(request):
     query = request.GET.get('q')
@@ -14,6 +12,7 @@ def posts(request):
     word_checked = request.GET.get('tag')
     posts_list = Post.objects.all()
     r_posts = Post.objects.all().order_by('-id')[:3]
+    poemes = Poeme.objects.all().order_by('-id')[:4]
     if word_checked:
         tag_checked = Tag.objects.get(word=word_checked)
         posts_list = Post.objects.filter(tags=tag_checked)
@@ -49,7 +48,8 @@ def posts(request):
         return redirect("list_post")
     context = {
         'posts':posts,
-        'r_posts':r_posts
+        'r_posts':r_posts,
+        "poemes":poemes
     }
     return render(request,'Blog_Forum/list_post.html',context)
 
@@ -57,6 +57,7 @@ def detail_post(request,id):
     post = get_object_or_404(Post,id=id)
     r_posts = Post.objects.all().order_by('-id')[:4]
     comments = Comments.objects.filter(post=post)
+    poemes = Poeme.objects.all().order_by('-id')[:4]
     is_liked = False
     if post.likes.filter(id=request.user.id).exists():
         is_liked = True
@@ -73,6 +74,7 @@ def detail_post(request,id):
         'r_posts':r_posts,
         'comments':comments,
         'is_liked':is_liked,
+        'poemes':poemes
     }
     return render(request,'Blog_Forum/single-blog.html',context)
 
@@ -89,5 +91,52 @@ def like_post(request):
         is_liked = True
     return redirect("detail_post",post_id)
 
+
+############################ Forum Part ######################################
+
+def home_forum(request):
+    query = request.GET.get('q')
+    suj_checked = request.GET.get('sujet')
+    messages_list = Message.objects.all().order_by('-id')
+    r_messages = Message.objects.all().order_by('-id')[:3]
+    poemes = Poeme.objects.all().order_by('-id')[:4]
+    if suj_checked:
+        messages_list = Message.objects.filter(subjet=suj_checked)
+    if query:
+        messages_list = Message.objects.filter(
+            Q(message__icontains=query)|
+            Q(author__last_name__icontains=query)|
+            Q(author__first_name__icontains=query)
+        )
+    paginator = Paginator(messages_list,10)
+    page = request.GET.get('page')
+    try : 
+        messages = paginator.page(page)
+    except PageNotAnInteger:
+        messages = paginator.page(1)
+    except EmptyPage:
+        messages = paginator.page(paginator.num_pages)
+    is_liked = False
+    for m in messages_list:
+        if m.likes.filter(id=request.user.id).exists():
+            is_liked = True
+    context = {
+        "messages":messages,
+        "poemes":poemes,
+        "is_liked":is_liked,
+        "r_messages":r_messages
+    }
+    return render(request,"Blog_Forum/home_forum.html",context)
     
-        
+@login_required
+def like_msg(request):
+    msg_id = request.POST.get('msg_id')
+    message = get_object_or_404(Message, id=msg_id)
+    is_liked = False
+    if message.likes.filter(id=request.user.id).exists():
+        message.likes.remove(request.user)
+        is_liked = False
+    else:
+        message.likes.add(request.user)
+        is_liked = True
+    return redirect("forum")
