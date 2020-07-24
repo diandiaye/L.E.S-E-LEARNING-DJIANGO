@@ -64,7 +64,7 @@ def Cours_details(request,niveau, categorie, titre):
     som = documents.count()
     
     enrollCours = {
-             'membre' : request.user.id,
+             'membre' : request.user.membre.id,
              'cours' : cours.id   
      }
     form = Membre_Cours_Form(enrollCours)

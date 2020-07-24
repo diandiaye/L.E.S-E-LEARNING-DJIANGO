@@ -10,6 +10,9 @@ class Cours(models.Model):
     niveau = models.CharField(max_length=50)
     def __str__(self):
         return self.titre
+
+
+
     
 class Membre_Cours(models.Model):
     membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
