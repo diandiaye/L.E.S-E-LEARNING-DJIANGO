@@ -30,10 +30,12 @@
                 <div class="col-xl-12">
                     <div class="section_tittle text-center">
                         <p>Les-E-Learning Cours (+ {{som}} )</p>
-                        <h2>{{niveau}} : Cours disponibles</h2>
+                        <h2>{{niveau.niveau}} : Cours disponibles</h2>
                     </div>
                 </div>
             </div>
+
+            
 
             <div class="row">
 
@@ -43,12 +45,12 @@
              
                 <div class="col-sm-6 col-lg-4 mb-5">
                     <div class="single_special_cource">
-                     <img src="{% static 'img/special_cource_1.png' %}" class="special_img" alt="">
+                     <img src="{{i.photo.url}}" class="special_img" width="400" alt="">
                         <div class="special_cource_text">
-                            <a href="{% url 'Cours_details' i.niveau i.categorie i.titre %}" class="btn_4">Suivre le cours</a>
+                            <a href="{% url 'Cours_details' niveau.niveau i.categorie i.titre %}" class="btn_4">Suivre le cours</a>
                            
-                            <h3>{{i.titre}}</h3>
-                            <p>{{i.description}}</p>
+                            <h3>{{i.titre|truncatechars:20}}</h3>
+                            <p>{{i.description|truncatechars:30}}</p>
 
                             <div class="author_info">
                                 <div class="author_img">

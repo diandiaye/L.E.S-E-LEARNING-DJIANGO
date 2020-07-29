@@ -24,33 +24,70 @@
     
 
     <!--================ Start Course Details Area =================-->
-    <section class="course_details_area section_padding">
-        <div class="container">
-            <div class="row container text-center">
-                <h1 class="title">Les cours suivis</h1>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-12 course_details_left">
-                    <div class="content_wrapper">
-                        <div class="content">
-                            <ul class="course_list">
-                                
-                                <li class="justify-content-between align-items-center d-flex">
-                                    
-                                    <p>Terminal</p>
-                                    <p>Developpement WEB</p>
-                                    <p>Django Framework</p>
-                                    <a class="btn_2 text-uppercase" href="#">Voir Cours</a>
-                                    
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </div>
+    <div class="container mt-5 mb-5">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-12">
+                <div class="section_tittle text-center">
+                    <h2>Vous suivez actuellement  {{som}}  cours</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!--================ End Course Details Area =================-->
+
+        <div class="row">
+
+            {% for c in cours_enroll  %}
+
+            <div class="col-lg-6 mt-3 mb-3">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                      Classe : {{c.niveau.niveau}}
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{c.titre}}</h5>
+                      <p class="card-text">{{c.description|truncatechars:40}}</p>
+                      <a href="{% url 'Cours_details' c.niveau.niveau c.categorie c.titre  %}" class="btn btn-success">Voir Cours</a>
+                      <a href="{% url 'Delete_cours' c.id  %}" class="btn btn-danger">Supprimer</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                    Module : {{c.categorie|truncatechars:30}}
+                    </div>
+                  </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <!--================ End cours_enrolle Details Area =================-->
+
+    <nav class="blog-pagination justify-content-center d-flex">
+        <ul class="pagination">
+            {% if cours_enroll.has_previous %}
+            <li class="page-item">
+                <a href="?page={{ cours_enroll.previous_page_number }}" class="page-link" aria-label="Previous">
+                    &laquo;
+                </a>
+            </li>
+            {% endif %}
+            {% for p in cours_enroll.paginator.page_range %}
+            {% if cours_enroll.number == p  %}
+            <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if cours_enroll.has_next %}
+            <li class="page-item">
+                <a href="?page={{ cours_enroll.next_page_number }}" class="page-link" aria-label="Next">
+                    &raquo;
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
     {% endblock content %}

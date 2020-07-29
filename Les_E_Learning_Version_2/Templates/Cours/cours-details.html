@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
-                            <h2>{{cours.niveau}} : {{cours.titre}}</h2>
+                            <h2>{{cours.niveau.niveau}} : {{cours.titre|truncatechars:20}}</h2>
                           
                         </div>
                     </div>
@@ -21,18 +21,42 @@
     </section>
     <!-- breadcrumb start-->
 
+    <!-- <div class="container mt-2">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+           <ul class="messages">
+           {% for message in messages %}
+           <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+           {% endfor %}
+           </ul>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+    </div> -->
+
+    {% for message in messages %}
+        <div class="container-fluid p-0">
+        <div class="alert {{ message.tags }} alert-dismissible fade show text-center" role="alert" >
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+        </div>
+    {% endfor %}
+
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area section_padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 course_details_left">
                     <div class="main_image">
-                        <img class="img-fluid" src="{% static 'img/single_cource.png' %}" alt="">
+                        <img class="img-fluid" src="{{cours.photo.url}}" width="600" height="300" alt="">
                     </div>
                     <div class="content_wrapper">
                         <h4 class="title_top">Description du cours</h4>
                         <div class="content">
-                           {{cours.description}}
+                           {{cours.description|truncatechars:"20"}}
                         </div>
 
                         
@@ -125,19 +149,19 @@
                             <li>
                                 <a class="justify-content-between d-flex" href="#">
                                     <p>Nom du cours</p>
-                                    <span class="color">{{cours.titre}}</span>
+                                    <span class="color">{{cours.titre|truncatechars:20}}</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="justify-content-between d-flex" href="#">
                                     <p> Classe </p>
-                                    <span class="color">{{cours.niveau}}</span>
+                                    <span class="color">{{cours.niveau.niveau}}</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="justify-content-between d-flex" href="#">
                                     <p>Module </p>
-                                    <span class="color">{{cours.categorie}}</span>
+                                    <span class="color">{{cours.categorie|truncatechars:20}}</span>
                                 </a>
                             </li>
                             <li>
@@ -154,85 +178,67 @@
                     
                         <div class="feedeback">
                             <h6>Votre commentaire</h6>
-                            <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
-                            <div class="mt-10 text-right">
-                                <a href="#" class="btn_1">Soumettre</a>
-                            </div>
+                            <form action="{% url 'Cours_details'  cours.niveau.niveau cours.categorie cours.titre %}" method="POST">
+                                {% csrf_token %}
+                                <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
+                                <div class="mt-10 text-right">
+                                    <button  type="submit" class="btn_1">Soumettre</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="comments-area mb-30">
+                        <div class="comments-area mb-5">
+                            {% for feed in feedbacks  %}
+                              
+    
                             <div class="comment-list">
                                 <div class="single-comment single-reviews justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb">
-                                            <img src="{% static 'img/cource/cource_1.png' %}" alt="">
+                                            <img class="rounded-circle" src="{% static 'img/cource/cource_1.png' %}" alt="">
                                         </div>
                                         <div class="desc">
-                                            <h5><a href="#">Emilly Blunt</a>
+                                            <h5><a href="#">{{feed.membre.user.username}}</a>
                                             </h5>
-                                            <div class="rating">
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/star.svg' %}" alt=""></a>
-                                            </div>
+                                    
                                             <p class="comment">
-                                                Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                form
+                                                {{feed.feedback|truncatechars:30}}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="comment-list">
-                                <div class="single-comment single-reviews justify-content-between d-flex">
-                                    <div class="user justify-content-between d-flex">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/cource/cource_2.png' %}" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            <h5><a href="#">Elsie Cunningham</a>
-                                            </h5>
-                                            <div class="rating">
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/star.svg' %}" alt=""></a>
-                                            </div>
-                                            <p class="comment">
-                                                Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                form
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-list">
-                                <div class="single-comment single-reviews justify-content-between d-flex">
-                                    <div class="user justify-content-between d-flex">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/cource/cource_3.png' %}" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            <h5><a href="#">Maria Luna</a>
-                                            </h5>
-                                            <div class="rating">
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/color_star.svg' %}' %}" alt=""></a>
-                                                <a href="#"><img src="{% static 'img/icon/star.svg' %}' %}" alt=""></a>
-                                            </div>
-                                            <p class="comment">
-                                                Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                form
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            {% endfor %}
+
+                              <!--::blog_part end::-->
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    {% if feedbacks.has_previous %}
+                                    <li class="page-item">
+                                        <a href="?page={{ feedbacks.previous_page_number }}" class="page-link" aria-label="Previous">
+                                            &laquo;
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    {% for p in feedbacks.paginator.page_range %}
+                                    {% if feedbacks.number == p  %}
+                                    <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                                    {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% if feedbacks.has_next %}
+                                    <li class="page-item">
+                                        <a href="?page={{ feedbacks.next_page_number }}" class="page-link" aria-label="Next">
+                                            &raquo;
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+
                         </div>
+
                     </div>
                 </div>
             </div>

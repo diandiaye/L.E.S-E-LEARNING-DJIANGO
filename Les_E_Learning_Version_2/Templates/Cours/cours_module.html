@@ -30,25 +30,36 @@
                 <div class="col-xl-12">
                     <div class="section_tittle text-center">
                         <p>Les-E-Learning Modules (+ {{som}} )</p>
-                        <h2>{{niveau}} : Modules disponibles</h2>
+                        <h2>{{niveau_.niveau}} : Modules disponibles</h2>
                     </div>
                 </div>
             </div>
 
             <div class="row">
+               
 
             {% for cat in categorie  %}
-              
-                <div class="col-sm-6 col-lg-4 mb-5">
-                    <div class="single_special_cource">
-                        <a href="{% url 'Cours_liste' niveau cat.categorie %}" > <img src="{%  static 'img/special_cource_1.png' %}" class="special_img" alt=""></a>
-                        <div class="special_cource_text text-center">
-                            <a href="{% url 'Cours_liste' niveau cat.categorie %}" class="btn_4">{{cat.categorie}}</a>
-                        </div>
 
-                    </div>
-                </div>
+
+                <div class="col-lg-4 mt-3 mb-3">
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                            {{niveau_.niveau}}
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">{{cat.categorie|truncatechars:50}}</h5>
+            
+                        <a  class="btn btn-success" href="{% url 'Cours_liste' niveau_.niveau cat.categorie %}">Voir les Cours du Module</a>
+                
+                        </div>
         
+                    </div>
+
+                </div>
+
+
+            
 
             {% endfor %}
 
@@ -56,7 +67,7 @@
 
         </div>
     </section>
-    <!--::blog_part end::-->
+    <!-- ::blog_part end::-->
 
     <nav class="blog-pagination justify-content-center d-flex">
         <ul class="pagination">
@@ -82,7 +93,7 @@
             </li>
             {% endif %}
         </ul>
-    </nav>
+    </nav> 
 
     <!--::review_part start::-->
     <section class="testimonial_part section_padding">
