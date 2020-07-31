@@ -13,7 +13,7 @@ from django.contrib import messages
 def Cours_niveau(request):
     niveau = Niveau.objects.all()
     som = niveau.count()
-#     cours_plus_visite = Membre_Cours.objects.all() 
+    
     paginator = Paginator(niveau, 6)
     page = request.GET.get('page', 1)
     try:
@@ -24,7 +24,29 @@ def Cours_niveau(request):
             niveau = paginator.page(1)
     except EmptyPage:
             niveau = paginator.page(paginator.num_pages)
+            
+    
+    query_ = request.GET.get("q")
+    
+    if query_:
+            
+        query = Niveau.objects.filter(niveau__icontains=query_)
+     
+        paginator = Paginator(query, 6)
+        page = request.GET.get('page', 1)
+        try:
+            query = paginator.page(page)
+        except PageNotAnInteger:
+            query = paginator.page(1)
+        except EmptyPage:
+            query = paginator.page(paginator.num_pages)
+        
+
+
     return render(request, "Cours/cours_niveau.html", locals())
+
+
+      
 
 def Cours_module(request, niveau):
     niveau_ = Niveau.objects.get(niveau=niveau)
@@ -61,7 +83,13 @@ def Cours_liste(request, niveau, categorie):
     except EmptyPage:
             cours = paginator.page(paginator.num_pages)
             
+ 
+            
+
+            
     return render(request, "Cours/cours_liste.html", locals())
+
+  
 
 
 def Cours_details(request,niveau, categorie, titre):
