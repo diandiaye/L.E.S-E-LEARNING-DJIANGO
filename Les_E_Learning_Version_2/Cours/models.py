@@ -18,10 +18,13 @@ class Cours(models.Model):
     categorie = models.CharField(max_length=50)
     niveau = models.ForeignKey(Niveau, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to="./Cours", height_field=None, width_field=None, max_length=None)
+    likes = models.ManyToManyField(Membre, blank=True, null=True)
 
     def __str__(self):
         return self.titre
-    
+    def nombre_likes(self):
+            return self.likes.count()
+
 
 
     

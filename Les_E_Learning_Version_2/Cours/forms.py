@@ -8,4 +8,8 @@ class Membre_Cours_Form(ModelForm):
        
        
        
+# class LikeCours_Form(ModelForm):
+#     class Meta:
+#        model = LikeCours
+#        fields = ['membre', 'cours']
        

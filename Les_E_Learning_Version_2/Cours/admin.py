@@ -20,10 +20,14 @@ class CoursFeedbackAdmin(admin.ModelAdmin):
 class Membre_CoursAdmin(admin.ModelAdmin):
     list_display = ("membre", "cours")
     
+# class LikeCoursAdmin(admin.ModelAdmin):
+#     list_display = ("membre", "cours")
+    
     
     
 admin.site.register(Cours, CoursAdmin)
 admin.site.register(CoursFeedback, CoursFeedbackAdmin)
 admin.site.register(Niveau, NiveauAdmin)
-admin.site.register(Membre_Cours)
+admin.site.register(Membre_Cours, Membre_CoursAdmin)
 admin.site.register(Documents_Cours ,Documents_CoursAdmin )
+# admin.site.register(LikeCours)

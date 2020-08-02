@@ -166,8 +166,17 @@
                             </li>
                             <li>
                                 <a class="justify-content-between d-flex" href="#">
-                                    <p class="ti-heart"> </p>
-                                    <span class="color">2k like</span>
+                                    <form  action="{% url 'Like_Cours' cours.niveau.niveau cours.categorie cours.titre %}">
+                                        {% csrf_token %}
+                                    
+                                        {% if is_liked %}
+                                        <button class="genric-btn danger-border circle arrow" type="submit" ><i class="fa fa-heart text-danger" style="font-size:25px;"></i></button>
+                                        {% else %}
+                                        <button class="genric-btn info-border circle arrow" type="submit" ><i class="fa fa-heart" style="font-size:25px;"></i></button>
+                                        {% endif %}
+
+                                    </form>
+                                    <span class="color">{{cours.nombre_likes}} Likes</span>
                                 </a>
                                
                             </li>
