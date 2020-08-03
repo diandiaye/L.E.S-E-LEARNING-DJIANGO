@@ -90,6 +90,14 @@ def Cours_liste(request, niveau, categorie):
     niveau_id = niveau.id
     cours = Cours.objects.filter(Q(niveau = niveau_id), Q(categorie = categorie))
     som = cours.count()
+    
+    cours_populaires = Cours.objects.filter(Q(niveau = niveau_id), Q(categorie = categorie)).order_by("-likes").exclude(likes=0).distinct()[:10]
+ 
+    
+    
+    
+
+        
     paginator = Paginator(cours, 12)
     page = request.GET.get('page', 1)
     try:

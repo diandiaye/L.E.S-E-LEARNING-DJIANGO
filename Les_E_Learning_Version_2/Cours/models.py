@@ -32,6 +32,8 @@ class Membre_Cours(models.Model):
     membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
     cours = models.ForeignKey(Cours, on_delete=models.CASCADE)
     
+    
+    
 class CoursFeedback(models.Model):
     feedback = models.TextField()
     membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
