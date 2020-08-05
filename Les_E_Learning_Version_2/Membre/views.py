@@ -50,8 +50,22 @@ def ModifProfil(request):
             user.username=username
             user.set_password(password) 
             user.save()  
-            messages.success(request,"votre mot de passe a bien été modifié")   
+            messages.success(request,"vos informations ont bien été modifiées")   
             return redirect('Connection')    
         
     form=ModifForm()
     return render(request, 'Membre/profil.html', locals())
+def ResetPassword(request):
+    if request.method=='POST':
+        form=ResetForm(request.POST)
+        if form.is_valid():
+            password=form.cleaned_data['password']
+            email=form.cleaned_data['email']
+            user=User.objects.get(email=email)
+            user.set_password(password) 
+            user.save()  
+            messages.success(request,"votre mot de passe a bien été modifié")   
+            return redirect('Connection')    
+        
+    form=ResetForm()
+    return render(request, 'Membre/password.html', locals())

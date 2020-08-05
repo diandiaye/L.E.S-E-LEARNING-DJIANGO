@@ -12,5 +12,6 @@ urlpatterns = [
     path('connection',views.Connection, name = "Connection" ),
     path('logout',views.Logout,name='Logout'),
     path('modif',views.ModifProfil,name="Modifier"),
+    path('reset',views.ResetPassword,name='Reset')
     
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

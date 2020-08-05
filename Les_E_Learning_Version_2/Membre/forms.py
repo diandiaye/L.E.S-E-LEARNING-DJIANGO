@@ -39,12 +39,20 @@ class ConnectForm(forms.Form):
         self.fields['password'].widget.attrs['class']='form-control'
 class ModifForm(forms.Form):
     email=forms.EmailField()
-    username=forms.CharField(max_length=50)
-    password=forms.CharField(widget=forms.PasswordInput())  
+    username=forms.CharField(max_length=50,required=False)
+    password=forms.CharField(widget=forms.PasswordInput(),required=False)  
     
     def __init__(self,*args,**kwargs):
         super(ModifForm,self).__init__(*args,**kwargs)
         self.fields['username'].widget.attrs['class']='form-control'
         self.fields['password'].widget.attrs['class']='form-control'     
-        self.fields['email'].widget.attrs['class']='form-control'   
+        self.fields['email'].widget.attrs['class']='form-control'  
+class ResetForm(forms.Form):
+    email=forms.EmailField()
+    password=forms.CharField(widget=forms.PasswordInput())  
+    
+    def __init__(self,*args,**kwargs):
+        super(ResetForm,self).__init__(*args,**kwargs)
+        self.fields['password'].widget.attrs['class']='form-control'     
+        self.fields['email'].widget.attrs['class']='form-control'    
     
