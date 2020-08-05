@@ -11,5 +11,6 @@ urlpatterns = [
     path('',views.OuvrirCompte, name = "OuvrirCompte" ),
     path('connection',views.Connection, name = "Connection" ),
     path('logout',views.Logout,name='Logout'),
+    path('modif',views.ModifProfil,name="Modifier"),
     
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

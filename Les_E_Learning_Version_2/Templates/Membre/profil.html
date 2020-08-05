@@ -1,0 +1,42 @@
+{% extends "Layouts/baseCompte.html" %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'compte/images/img-01.png' %}" alt="IMG">
+				</div>
+                <div class="text-center p-t-136">
+                    <p>
+                        Vous ne pouvez Modifier que votre mot de passe et votre pseudo.
+                        L'email doit être l'adresse avec laquelle vous vous êtes incrit.
+                
+                    </p>
+                </div>
+				<form class="login100-form validate-form" method="POST" action="{% url 'Modifier' %}">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						Modifier votre profil
+					</span>
+					{{form}}
+					
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Modifier
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+    </div>
+    
+    {% endblock content %}
+	

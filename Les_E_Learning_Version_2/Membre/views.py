@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth.forms import UserChangeForm
 
 # Create your views here.
 ###################Inscription###########################""""
@@ -38,3 +39,19 @@ def Connection(request):
 def Logout(request):
     logout (request)
     return redirect('Accueil')
+def ModifProfil(request):
+    if request.method=='POST':
+        form=ModifForm(request.POST)
+        if form.is_valid():
+            password=form.cleaned_data['password']
+            username=form.cleaned_data['username']
+            email=form.cleaned_data['email']
+            user=User.objects.get(email=email)
+            user.username=username
+            user.set_password(password) 
+            user.save()  
+            messages.success(request,"votre mot de passe a bien été modifié")   
+            return redirect('Connection')    
+        
+    form=ModifForm()
+    return render(request, 'Membre/profil.html', locals())
