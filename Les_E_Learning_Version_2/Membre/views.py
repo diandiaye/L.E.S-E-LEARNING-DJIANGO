@@ -35,3 +35,6 @@ def Connection(request):
                     return redirect('Cours_niveau')
     form=ConnectForm()        
     return render(request, 'Membre/connection.html',locals())
+def Logout(request):
+    logout (request)
+    return redirect('Accueil')
