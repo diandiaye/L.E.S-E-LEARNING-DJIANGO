@@ -7,9 +7,10 @@ from django.utils.text import slugify
 from django.db.models import Q
 import datetime
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required(login_url='/compte/connection')
 def Cours_niveau(request):
     niveau = Niveau.objects.all()
     som = niveau.count()
@@ -223,7 +224,7 @@ def Cours_details(request,niveau, categorie, titre):
 
 
 
-    
+@login_required(login_url='/compte/connection')
 def Tableau_bord(request):
      cours_enroll =Cours.objects.filter(membre_cours__membre__id=request.user.membre.id).distinct()
      som = cours_enroll.count()
@@ -261,4 +262,8 @@ def Like_Cours(request, niveau, categorie, titre ):
         is_liked = True
          
     return render(request, "Cours/cours-details.html", locals())
-        
+
+
+
+
+
