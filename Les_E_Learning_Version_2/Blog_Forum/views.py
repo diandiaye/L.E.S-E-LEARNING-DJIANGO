@@ -78,7 +78,7 @@ def detail_post(request,id):
     }
     return render(request,'Blog_Forum/single-blog.html',context)
 
-@login_required
+@login_required(login_url='/compte/connection')
 def like_post(request):
     post_id = request.POST.get('post_id')
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
@@ -93,7 +93,7 @@ def like_post(request):
 
 
 ############################ Forum Part ######################################
-
+@login_required(login_url='/compte/connection')
 def home_forum(request):
     query = request.GET.get('q')
     suj_checked = request.GET.get('sujet')
@@ -123,7 +123,7 @@ def home_forum(request):
     }
     return render(request,"Blog_Forum/home_forum.html",context)
     
-@login_required
+@login_required(login_url='/compte/connection')
 def like_msg(request):
     msg_id = request.POST.get('msg_id')
     message = get_object_or_404(Message, id=msg_id)
@@ -136,7 +136,7 @@ def like_msg(request):
         is_liked = True
     return redirect("forum")
 
-@login_required
+@login_required(login_url='/compte/connection')
 def add_reponse(request,id):
     if request.method == "POST":
         msg = get_object_or_404(Message,id=id)
@@ -150,7 +150,7 @@ def add_reponse(request,id):
         messages.success(request,"Votre réponse a été ajouté avec succès !")
     return redirect("forum")
 
-@login_required
+@login_required(login_url='/compte/connection')
 def add_message(request):
     if request.method == "POST":
         message = request.POST['message']

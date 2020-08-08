@@ -17,3 +17,11 @@ class GeneratePdf(View):
         }
         pdf = render_to_pdf('Blog_Forum/single_poeme.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
+    
+    
+def handler404(request, *args, **kwargs):
+        return render(request, "Errors/404.html", status=404)
+    
+def handler500(request, *args, **kwargs):
+        return render(request, "Errors/500.html", status=404)
+        
