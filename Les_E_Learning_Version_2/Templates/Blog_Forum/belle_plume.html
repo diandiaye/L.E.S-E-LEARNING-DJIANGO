@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-8">
             {% for p in poemes %}
-            <div class="card">
+            <div class="card mt-5 mb-5">
                 <div class="card-body">
                   <h5 class="card-title primary">{{p.titre}}</h5>
                   <p class="card-text">{{p.contenu|truncatewords:"20"}}</p>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                            type="submit">Search</button>
+                            type="submit">Rechercher</button>
                     </form>
                 </aside>
 
@@ -87,13 +87,13 @@
                     {% for rp in r_posts %}
                             <div class="media post_item">
                                 {% if rp.photo %}
-                                <img src="{{rp.photo.url}}" alt="post">
+                                <img src="{{rp.photo.url}}" alt="post" width="80" height="80">
                                 {% else %}
                                 <img src="img/post/post_1.png" alt="post">
                                 {% endif %}
                                 <div class="media-body">
                                     <a href="{% url 'detail_post' rp.id %}">
-                                        <h3>{{rp.title}}</h3>
+                                        <h3>{{rp.title|truncatechars:20}}</h3>
                                     </a>
                                     <p>{{rp.updated|date:'d/m/Y'}}</p>
                                 </div>
@@ -119,18 +119,7 @@
                     {% endfor %}
                 </ul>
                 </aside>
-                <aside class="single_sidebar_widget newsletter_widget">
-                    <h4 class="widget_title">Newsletter</h4>
-
-                    <form action="#">
-                        <div class="form-group">
-                            <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                            type="submit">Subscribe</button>
-                    </form>
-                </aside>
+                <!--  -->
             </div>
         </div>
     </div>

@@ -56,7 +56,7 @@
                     <div class="content_wrapper">
                         <h4 class="title_top">Description du cours</h4>
                         <div class="content">
-                           {{cours.description|truncatechars:"20"}}
+                           {{cours.description|linebreaksbr}}
                         </div>
 
                         
@@ -210,7 +210,7 @@
                                             </h5>
                                     
                                             <p class="comment">
-                                                {{feed.feedback|truncatechars:30}}
+                                                {{feed.feedback|linebreaksbr}}
                                             </p>
                                         </div>
                                     </div>

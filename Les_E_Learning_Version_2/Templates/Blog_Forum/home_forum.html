@@ -24,19 +24,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'forum' %}">Forum(All)</a>
+            <a class="navbar-brand" href="{% url 'forum' %}">Forum</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <form method="GET">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Education">Education</button>
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Politique">Politique</button>
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Economie">Economie</button>
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Religion">Religion</button>
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Santé">Santé</button>
-                <button class="nav-item nav-link genric-btn info" type="submit" name="sujet" value="Sport">Sport</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Education">Education</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Politique">Politique</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Economie">Economie</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Religion">Religion</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Santé">Santé</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="sujet" value="Sport">Sport</button>
                 </div>
             </div>
             </form>
@@ -93,7 +93,7 @@
     </div>
     
     <!--================Forum Area =================-->
-    <section class="blog_area section-padding">
+    <section class="blog_area section-padding mt-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
@@ -191,7 +191,7 @@
                                     </div>
                                 </div>
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Search</button>
+                                    type="submit">Rechercher</button>
                             </form>
                         </aside>
 
@@ -229,18 +229,7 @@
                             <li><a href="{% url 'poemes' %}" class="text-center"><h6 class="text-primary"><i class="fa fa-plus"></i> Voir plus</h6></a></li>
                         </ul>
                         </aside>
-                        <aside class="single_sidebar_widget newsletter_widget">
-                            <h4 class="widget_title">Newsletter</h4>
-
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                                </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Subscribe</button>
-                            </form>
-                        </aside>
+                        
                     </div>
                 </div>
             </div>

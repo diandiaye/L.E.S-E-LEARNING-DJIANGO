@@ -23,7 +23,7 @@
 
 
     <!--================Blog Area =================-->
-    <section class="blog_area section-padding">
+    <section class="blog_area section-padding mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
@@ -32,7 +32,7 @@
                         <article class="blog_item">
                             <div class="blog_item_img">
                             {% if p.photo %}
-                                <a href="{% url 'detail_post' p.id %}"><img class="card-img rounded-0" src="{{ p.photo.url }}" alt=""></a>
+                                <a href="{% url 'detail_post' p.id %}"><img class="card-img rounded-0" src="{{ p.photo.url }}" alt="" width="500" height="500"></a>
                             {% else %}
                                 <a href="{% url 'detail_post' p.id %}"><img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt=""></a>
                             {% endif %}
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Search</button>
+                                    type="submit">Rechercher</button>
                             </form>
                         </aside>
 
@@ -112,13 +112,13 @@
                             <form method="GET" action="{% url 'list_posts' %}">
                             <ul class="list cat-list">
                                 <li>
-                                    <button class="genric-btn success" type="submit" name="cat" value="E-learning">e-learning</button>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="cat" value="E-learning">e-learning</button>
                                 </li>
                                 <li>
-                                    <button class="genric-btn success" type="submit" name="cat" value="Activités">activités</button>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="cat" value="Activités">activités</button>
                                 </li>
                                 <li>
-                                    <button class="genric-btn success" type="submit" name="cat" value="Réalisations">réalisations</button>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" name="cat" value="Réalisations">réalisations</button>
                                 </li>
                             </ul>
                             </form>
@@ -129,13 +129,13 @@
                             {% for rp in r_posts %}
                             <div class="media post_item">
                                 {% if rp.photo %}
-                                <img src="{{rp.photo.url}}" alt="post">
+                                <img src="{{rp.photo.url}}" alt="post" width="80" height="80">
                                 {% else %}
                                 <img src="img/post/post_1.png" alt="post">
                                 {% endif %}
                                 <div class="media-body">
                                     <a href="{% url 'detail_post' rp.id %}">
-                                        <h3>{{rp.title}}</h3>
+                                        <h3>{{rp.title|truncatechars:20}}</h3>
                                     </a>
                                     <p>{{rp.updated|date:'d/m/Y'}}</p>
                                 </div>
@@ -162,18 +162,7 @@
                             <li><a href="{% url 'poemes' %}" class="text-center"><h6 class="text-primary"><i class="fa fa-plus"></i> Voir plus</h6></a></li>
                         </ul>
                         </aside>
-                        <aside class="single_sidebar_widget newsletter_widget">
-                            <h4 class="widget_title">Newsletter</h4>
-
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                                </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Subscribe</button>
-                            </form>
-                        </aside>
+                       
                     </div>
                 </div>
             </div>
