@@ -27,6 +27,8 @@
     </section>
     <!-- banner part start-->
 
+    
+
 
 
     <!-- learning part start-->
@@ -104,30 +106,30 @@
     <!-- learning part end-->
 
     <!-- member_counter counter start -->
-    <section class="member_counter">
+    <section class="member_counter mt-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">20</span>
+                        <span class="counter">{{nombre_classes}}</span>
                         <h4>Classes</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">960</span>
+                        <span class="counter">{{nombre_modules}}</span>
                         <h4> Modules</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">1020</span>
+                        <span class="counter">{{nombre_cours}}</span>
                         <h4>Cours</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">820</span>
+                        <span class="counter">{{nombre_user}}</span>
                         <h4>Membres</h4>
                     </div>
                 </div>
@@ -287,7 +289,7 @@
     <!-- learning part end-->
 
     <!--::review_part start::-->
-    <section class="testimonial_part">
+    <!-- <section class="testimonial_part">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
@@ -341,79 +343,240 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     <!--::blog_part end::-->
 
-    <!--::blog_part start::-->
-    <section class="blog_part section_padding">
-        <div class="container">
+    <!--::review_part start::-->
+    <section class="testimonial_part">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
                     <div class="section_tittle text-center">
-                        <p>Our Blog</p>
-                        <h2>Students Blog</h2>
+                        <h2>Témoignages</h2>
+                        
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="{% static 'img/blog/blog_1.png' %}" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Dry beginning sea over tree</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
+                <div class="col-lg-12">
+                    <div class="textimonial_iner owl-carousel">
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>Le développement de plateformes comme L.E.S E-learning est une nécessité par ce que d'abord
+                                            nous devons cultiver l’excellence et élargir notre culture générale
+                                            ensuite beaucoup n’ont pas accès à de bons documents ,certains reçoivent des cours un peu médiocre ce qui ne favorisent pas l’excellence.
+                                                </p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{% static 'img/default-avatar.png' %}" width="500" height="300" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p> Le développement de L.E.S E-learning nous permettra d’approfondir nos connaissances
+                                            grâce à des cours de haut niveau mais aussi nous aurons accès à des documents
+                                            conformes à notre niveau ainsi nous atteindrons l’excellence</p>
+                                            <h4>Yaye Dieynaba WADE </h4>
+                                            <h5>Première S1 </h5>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="{% static 'img/blog/blog_2.png' %}" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Developing</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">All beginning air two likeness</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
+
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>Le développement de plateformes comme L.E.S E-learning est une nécessité par ce que d'abord
+                                            nous devons cultiver l’excellence et élargir notre culture générale
+                                            ensuite beaucoup n’ont pas accès à de bons documents ,certains reçoivent des cours un peu médiocre ce qui ne favorisent pas l’excellence.
+                                                </p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{% static 'img/default-avatar.png' %}" width="500" height="300" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p> Le développement de L.E.S E-learning nous permettra d’approfondir nos connaissances
+                                            grâce à des cours de haut niveau mais aussi nous aurons accès à des documents
+                                            conformes à notre niveau ainsi nous atteindrons l’excellence</p>
+                                            <h4>Yaye Dieynaba WADE </h4>
+                                            <h5>Première S1 </h5>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="{% static 'img/blog/blog_3.png' %}" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Form day seasons sea hand</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
+
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>Le développement de plateformes comme L.E.S E-learning est une nécessité par ce que d'abord
+                                            nous devons cultiver l’excellence et élargir notre culture générale
+                                            ensuite beaucoup n’ont pas accès à de bons documents ,certains reçoivent des cours un peu médiocre ce qui ne favorisent pas l’excellence.
+                                                </p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{% static 'img/default-avatar.png' %}" width="500" height="300" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p> Le développement de L.E.S E-learning nous permettra d’approfondir nos connaissances
+                                            grâce à des cours de haut niveau mais aussi nous aurons accès à des documents
+                                            conformes à notre niveau ainsi nous atteindrons l’excellence</p>
+                                            <h4>Yaye Dieynaba WADE </h4>
+                                            <h5>Première S1 </h5>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
+
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>Le développement de plateformes comme L.E.S E-learning est une nécessité par ce que d'abord
+                                            nous devons cultiver l’excellence et élargir notre culture générale
+                                            ensuite beaucoup n’ont pas accès à de bons documents ,certains reçoivent des cours un peu médiocre ce qui ne favorisent pas l’excellence.
+                                                </p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{% static 'img/default-avatar.png' %}" width="500" height="300" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p> Le développement de L.E.S E-learning nous permettra d’approfondir nos connaissances
+                                            grâce à des cours de haut niveau mais aussi nous aurons accès à des documents
+                                            conformes à notre niveau ainsi nous atteindrons l’excellence</p>
+                                            <h4>Yaye Dieynaba WADE </h4>
+                                            <h5>Première S1 </h5>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>Le développement de plateformes comme L.E.S E-learning est une nécessité par ce que d'abord
+                                            nous devons cultiver l’excellence et élargir notre culture générale
+                                            ensuite beaucoup n’ont pas accès à de bons documents ,certains reçoivent des cours un peu médiocre ce qui ne favorisent pas l’excellence.
+                                                </p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{% static 'img/default-avatar.png' %}" width="500" height="300" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p> Le développement de L.E.S E-learning nous permettra d’approfondir nos connaissances
+                                            grâce à des cours de haut niveau mais aussi nous aurons accès à des documents
+                                            conformes à notre niveau ainsi nous atteindrons l’excellence</p>
+                                            <h4>Yaye Dieynaba WADE </h4>
+                                            <h5>Première S1 </h5>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div> 
                     </div>
+                    
                 </div>
+
             </div>
         </div>
     </section>
     <!--::blog_part end::-->
+
+    <!--::review_part start::-->
+    <section class="testimonial_part section_padding">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl--">
+                    <div class="section_tittle text-center">
+                        <p>Les-E-Learning Cours</p>
+                        <h2>Les cours les plus populaires </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="textimonial_iner owl-carousel">
+
+
+                    {% for cp in cours_populaires  %}
+                                  
+                               
+                        <div class="testimonial_slider">
+                            <div class="row">
+
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <h4>CLASSE : {{cp.niveau.niveau}}</h4>
+                                        <h4>MODULE : {{cp.categorie}}</h4>
+                                        
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="{{cp.photo.url}}" alt="#" width="250" height="200">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <h4>TITRE : {{cp.titre}}</h4>
+            
+                                        <h5><strong>{{cp.nombre_likes}}</strong> personnes ont aimé ce cours</h5>
+                                        
+
+        
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                        {% empty %}
+                        
+                        <div class="alert alert-warning container text-center" role="alert">
+                            Les cours pour cette section ne sont pas disponibles pour le moment.
+                            <p><strong>Merci de votre compréhension.</strong></p>
+                        </div>
+
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--::blog_part end::-->
+
+    
 
  
 

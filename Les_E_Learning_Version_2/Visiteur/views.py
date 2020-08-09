@@ -1,13 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from Cours.models import *
+from Membre.models import *
 
 from .forms import ContactForm
 
 
 # Create your views here.
 def Accueil(request):
-    return render(request, "Visiteur/index.html")
+    nombre_classes = Niveau.objects.all().count()
+    nombre_cours = Cours.objects.all().count()
+    nombre_modules = Cours.objects.all().values("categorie").distinct().count()
+    nombre_user = Membre.objects.all().count()
+    
+    cours_populaires = Cours.objects.all().order_by("-likes").exclude(likes=0).distinct()[:10]
+
+    return render(request, "Visiteur/index.html", locals())
 
 
 def About(request):
