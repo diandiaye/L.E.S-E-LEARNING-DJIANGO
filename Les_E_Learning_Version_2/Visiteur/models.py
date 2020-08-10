@@ -12,3 +12,11 @@ class Documents(models.Model):
     format_fichier = models.CharField(max_length=50)
     fichier = models.FileField(upload_to=None, max_length=100)
     annonces = models.ForeignKey(Annonces, on_delete=models.CASCADE)
+
+
+class Newsletter(models.Model):
+    email=models.EmailField()
+    date_added=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

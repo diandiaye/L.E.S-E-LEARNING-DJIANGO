@@ -15,25 +15,19 @@
             <div class="col-sm-6 col-md-4 col-xl-4">
                 <div class="single-footer-widget footer_2">
                     <h4>Newsletter</h4>
-                    <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
-                    </p>
-                    <form action="#">
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder='Enter email address'
-                                    onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = 'Enter email address'">
+                    <form method="post" ">
+                          {% csrf_token %}
+                          {{ form.as_p }}
+
                                 <div class="input-group-append">
-                                    <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                                    <button class="btn btn_1" type="submit"><i class="ti-angle-right"></i></button>
                                 </div>
-                            </div>
-                        </div>
+
                     </form>
                     <div class="social_icon">
-                        <a href="#"> <i class="ti-facebook"></i> </a>
-                        <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                        <a href="#"> <i class="ti-instagram"></i> </a>
-                        <a href="#"> <i class="ti-skype"></i> </a>
+                        <a href="https://www.facebook.com/LesElitesSenegalaises/"> <i class="ti-facebook"></i> </a>
+                        <a href="https://twitter.com/SenegalaisesLes?s=09"> <i class="ti-twitter-alt"></i> </a>
+                        <a href="https://www.instagram.com/invites/contact/?i=1le30ysf6ljat&utm_content=c6fafjd"> <i class="ti-instagram"></i> </a>
                     </div>
                 </div>
             </div>
