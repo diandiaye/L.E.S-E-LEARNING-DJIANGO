@@ -4,6 +4,9 @@ from .models import *
 # Register your models here.
 
 
+admin.site.site_header =  "LES-E-LEARNING ADMIN"
+
+
 class NiveauAdmin(admin.ModelAdmin):
     list_display = ("niveau", "photo")
 

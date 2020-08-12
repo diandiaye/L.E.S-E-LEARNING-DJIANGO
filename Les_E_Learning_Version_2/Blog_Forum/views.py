@@ -93,7 +93,7 @@ def like_post(request):
 
 
 ############################ Forum Part ######################################
-@login_required(login_url='/compte/connection')
+# @login_required(login_url='/compte/connection')
 def home_forum(request):
     query = request.GET.get('q')
     suj_checked = request.GET.get('sujet')
