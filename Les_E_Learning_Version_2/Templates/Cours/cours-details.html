@@ -53,14 +53,27 @@
                     <div class="main_image">
                         <img class="img-fluid" src="{{cours.photo.url}}" width="600" height="300" alt="">
                     </div>
-                    <div class="content_wrapper">
+                    <div class="content_wrapper" >
                         <h4 class="title_top">Description du cours</h4>
-                        <div class="content">
-                           {{cours.description|linebreaksbr}}
+            
+                        <div class="card" >
+                            <div class="card-body">
+                              <p class="card-text"> {{cours.description|linebreaksbr}} </p>
+                            </div>
                         </div>
 
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="title">Les supports pédagogiques du cours (+ {{som}} supports)</h4>
+  
+                            </div>
+                        </div>
+
+                        <div class="card" >
+                            <div class="card-body">
+
                         
-                        <h4 class="title">Les supports pédagogiques du cours (+ {{som}} supports)</h4>
                         <div class="content">
                             <ul class="course_list">
 
@@ -139,6 +152,8 @@
                                 </nav>
                             </div>
                         </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
 
@@ -184,6 +199,8 @@
                         </ul>
                     </div>
 
+                        <div class="card mt-5" >
+                        <div class="card-body">
                     
                         <div class="feedeback">
                             <h6>Votre commentaire</h6>
@@ -203,7 +220,7 @@
                                 <div class="single-comment single-reviews justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb">
-                                            <img class="rounded-circle" src="{% static 'img/cource/cource_1.png' %}" alt="">
+                                            <img class="rounded-circle" src="{% static 'img/cource/cource_1.png' %}" alt="" width="50" height="80">
                                         </div>
                                         <div class="desc">
                                             <h5><a href="#">{{feed.membre.user.username}}</a>
@@ -248,6 +265,8 @@
 
                         </div>
 
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>
