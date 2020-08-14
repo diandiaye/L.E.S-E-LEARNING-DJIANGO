@@ -11,7 +11,7 @@ class NiveauAdmin(admin.ModelAdmin):
     list_display = ("niveau", "photo")
 
 class CoursAdmin(admin.ModelAdmin):
-    list_display = ("titre", "categorie", "description", "photo", "niveau")
+    list_display = ("titre", "categorie", "photo", "niveau")
     
 
 class Documents_CoursAdmin(admin.ModelAdmin):
