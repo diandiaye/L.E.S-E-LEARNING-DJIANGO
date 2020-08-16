@@ -46,7 +46,7 @@
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">{{c.titre}}</h5>
-                      <p class="card-text">{{c.description|truncatechars:40}}</p>
+                      <!-- <p class="card-text">{{c.description|truncatechars:40}}</p> -->
                       <a href="{% url 'Cours_details' c.niveau.niveau c.categorie c.titre  %}" class="btn btn-success">Voir Cours</a>
                       <a href="{% url 'Delete_cours' c.id  %}" class="btn btn-danger">Supprimer</a>
                     </div>
