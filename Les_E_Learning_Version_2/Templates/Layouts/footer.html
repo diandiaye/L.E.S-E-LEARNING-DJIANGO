@@ -18,7 +18,7 @@
 
                     <form method="post">
                           {% csrf_token %}
-                           {% crispy form %}
+                           {{form.as_p}}
 
                                 <div class="input-group-append">
                                     <button class="btn btn_1" type="submit"><i class="ti-angle-right"></i></button>
