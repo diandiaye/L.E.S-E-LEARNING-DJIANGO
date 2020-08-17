@@ -54,7 +54,7 @@
                      {{ post.title }}
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="fa fa-user"></i> {{ post.author.username }}</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> {{ post.author_name }}</a></li>
                         <li><a><i class="fa fa-comments"></i> {{ comments|length }}</a></li>
                      </ul>
                      <p>
@@ -85,7 +85,9 @@
                      <img src="img/blog/author.png" alt="">
                      <div class="media-body">
                         <a href="#">
-                           <h4> AUTEUR : {{post.author.first_name}} {{post.author.last_name}}</h4>
+                           <h4 class="text-center">AUTEUR</h4>
+                           <h4>{{post.author_name}}</h4>
+                           <h4>{{post.author_desc}}</h4>
                         </a>
                      </div>
                   </div>

@@ -15,7 +15,8 @@ class Post(models.Model):
         ("E-learning","e-learning"),
         ("Activités","activités")
     )
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author_name = models.CharField(blank=True, null=True, max_length=50)
+    author_desc = models.CharField(blank=True, null=True, max_length=100)
     title = models.CharField(max_length=250)
     content = models.TextField()
     photo = models.ImageField(upload_to="posts/")
@@ -26,7 +27,7 @@ class Post(models.Model):
     categorie = models.CharField(max_length=15,choices=catgs,null=True)
 
     def __str__(self):
-        return self.author.username
+        return self.author_name
 
     def total_likes(self):
         return self.likes.count()
@@ -84,7 +85,9 @@ class Reponse(models.Model):
 class Poeme(models.Model):
     titre = models.CharField(max_length=300)
     contenu = models.TextField()
-    auteur = models.ForeignKey(User,on_delete=models.CASCADE)
+    author_name = models.CharField(blank=True, null=True, max_length=50)
+    author_desc = models.CharField(blank=True, null=True, max_length=100)
+    
 
     def __str__(self):
         return self.titre
