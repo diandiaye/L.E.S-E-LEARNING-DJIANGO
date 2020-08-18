@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
+
 @login_required(login_url='/compte/connection')
 def Cours_niveau(request):
     niveau = Niveau.objects.all()
@@ -48,7 +49,8 @@ def Cours_niveau(request):
         #     query = paginator.page(1)
         # except EmptyPage:
         #     query = paginator.page(paginator.num_pages)
- 
+
+
 
 
     return render(request, "Cours/cours_niveau.html", locals())

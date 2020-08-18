@@ -36,19 +36,19 @@ def About(request):
 
 def Contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            sender_name = form.cleaned_data['name']
-            sender_email = form.cleaned_data['email']
+        form_c = ContactForm(request.POST)
+        if form_c.is_valid():
+            sender_name = form_c.cleaned_data['name']
+            sender_email = form_c.cleaned_data['email']
 
             message = "{0} has sent you a new message:\n\n{1}".format(sender_name, form.cleaned_data['message'])
             send_mail('New Enquiry', message, sender_email, ['leselitessenegalaises@gmail.com'])
 
             return HttpResponse('Thanks for contacting us!')
     else:
-        form = ContactForm()
+        form_c = ContactForm()
 
-    return render(request, 'Visiteur/contact.html', {'form': form})
+    return render(request, 'Visiteur/contact.html', {'form': form_c})
 
 
 
