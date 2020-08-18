@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from . import views
@@ -8,9 +7,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
 
-    path('', views.Accueil, name = "Accueil" ),
-    path('about', views.About, name = "About" ),
-    path('contact/',views.Contact, name = "Contact" ),
-    
-    
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('', views.Accueil, name="Accueil"),
+                  path('newsletter/', views.Newsletter, name="Newsletter"),
+                  path('about', views.About, name="About"),
+                  path('contact/', views.Contact, name="Contact"),
+
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

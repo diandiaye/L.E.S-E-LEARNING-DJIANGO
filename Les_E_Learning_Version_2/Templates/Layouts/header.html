@@ -35,8 +35,14 @@
                                     <!-- <a class="dropdown-item" href="{% url 'forum' %}">Forum</a> -->
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'Contact' %}">Nos Contacts</a>
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Nos Contacts
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url  'Contact' %}">Nos Contacts</a>
+                                    <a class="dropdown-item" href="{% url 'Newsletter' %}">Newsletter</a>
+                                </div>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="{% url 'About' %}">A propos</a>
