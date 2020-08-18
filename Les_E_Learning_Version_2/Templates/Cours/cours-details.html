@@ -103,53 +103,32 @@
             
                             </ul>
                             <div class="mt-5">
-                            <nav aria-label="Page navigation example">
-                                {% if documents.has_other_pages %}
-                          
-                                  <ul class="pagination justify-content-center">
-                          
-                                    {% if documents.has_previous %}
-                          
-                                    <li class="page-item">
-                                      <a class="page-link active" href="?page={{ documents.previous_page_number }}">Previous</a>
-                                    </li>
-                          
-                                    {% else %}
-                          
-                                    <li class="disabled page-link"><span>Previous</span></li>
-                          
-                                    {% endif %}
-                          
-                                    {% for i in documents.paginator.page_range %}
-                          
-                                    {% if documents.number == i %}
-                          
-                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                          
-                                    {% else %}
-                          
-                                    <li class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                          
-                                    {% endif %}
-                          
-                                    {% endfor %}
-                          
-                                    {% if documents.has_next %}
-                          
-                                    <li class="page-item">
-                                      <a class="page-link" href="?page={{ documents.next_page_number }}">Next</a>
-                                    </li>
-                          
-                                    {% else %}
-                          
-                                    <li class="disabled page-link"><span>Next</span></li>
-                          
-                                    {% endif %}
-                                  </ul>
-                          
-                                  {% endif %}
-                          
+                                <nav class="blog-pagination justify-content-center d-flex">
+                                    <ul class="pagination">
+                                        {% if documents.has_previous %}
+                                        <li class="page-item">
+                                            <a href="?page={{ documents.previous_page_number }}" class="page-link" aria-label="Previous">
+                                                &laquo;
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% for p in documents.paginator.page_range %}
+                                        {% if documents.number == p  %}
+                                        <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                                        {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% if documents.has_next %}
+                                        <li class="page-item">
+                                            <a href="?page={{ documents.next_page_number }}" class="page-link" aria-label="Next">
+                                                &raquo;
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
                                 </nav>
+    
                             </div>
                         </div>
                         </div>

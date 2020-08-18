@@ -16,7 +16,17 @@ def Accueil(request):
     nombre_user = Membre.objects.all().count()
 
     cours_populaires = Cours.objects.all().order_by("-likes").exclude(likes=0).distinct()[:10]
-
+    if request.method == 'POST':
+        form =Newsletterform(request.POST)
+        if form.is_valid():
+            news = form.save(commit=False)
+            news.save()
+        return redirect('Accueil')
+    else:
+        form = Newsletterform()
+    context = {
+        'form': form,
+    }
     return render(request, "Visiteur/index.html", locals())
 
 
@@ -41,12 +51,4 @@ def Contact(request):
     return render(request, 'Visiteur/contact.html', {'form': form})
 
 
-def NewsletterU(request):
-    if request.method == "POST":
-        form = Newsletterform(request.POST)
-        if form.is_valid():
-            return redirect("Acceuil")
-        else:
-            form = Newsletterform()
 
-    return render(request, 'Layouts/footer.html', {'form': form})

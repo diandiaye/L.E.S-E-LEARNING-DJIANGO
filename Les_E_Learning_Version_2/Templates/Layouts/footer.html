@@ -1,7 +1,7 @@
 {% block content %}
 
 {% load static %}
-  
+  {% load crispy_forms_tags %}
   <!-- footer part start-->
    <footer class="footer-area">
     <div class="container">
@@ -14,16 +14,16 @@
             </div>
             <div class="col-sm-6 col-md-3 col-xl-3">
                 <div class="single-footer-widget footer_2">
-                    <h4>Newsletter</h4>
+                    <h4>Réseaux Sociaux</h4>
 
-                    <form method="post">
+                    <!-- <form method="post">
                           {% csrf_token %}
-                          {{ form.as_p }}
+                           {{form.as_p}}
 
                                 <div class="input-group-append">
                                     <button class="btn btn_1" type="submit"><i class="ti-angle-right"></i></button>
                                 </div>
-                    </form>
+                    </form> -->
                     <div class="social_icon">
 
                         <a  href="https://web.facebook.com/groups/623660954869978"> <i class="ti-facebook" style="size: 50px;"></i> </a>

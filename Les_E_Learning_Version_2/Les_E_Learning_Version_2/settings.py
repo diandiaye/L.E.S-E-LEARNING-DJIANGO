@@ -40,6 +40,7 @@ MESSAGE_TAGS = {
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,3 +138,5 @@ MEDIA_URL = '/media/'
 
 DEFAULT_FROM_EMAIL = 'biranbirane1210@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'bootstrap4', 'semantic-ui')
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
