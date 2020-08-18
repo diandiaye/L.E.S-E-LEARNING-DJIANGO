@@ -35,6 +35,19 @@ def About(request):
 
 
 def Contact(request):
+    
+    if request.method == 'POST':
+        form_new = Newsletterform(request.POST)
+        if form_new.is_valid():
+            news = form_new.save(commit=False)
+            news.save()
+        return redirect('Contact')
+    else:
+        form_new = Newsletterform()
+    context = {
+        'form_new': form_new,
+    }
+    
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -48,19 +61,19 @@ def Contact(request):
     else:
         form = ContactForm()
 
-    return render(request, 'Visiteur/contact.html', {'form': form})
+    return render(request, 'Visiteur/contact.html', locals())
 
 
-def Newsletter(request):
-    if request.method == 'POST':
-        form = Newsletterform(request.POST)
-        if form.is_valid():
-            news = form.save(commit=False)
-            news.save()
-        return redirect('Accueil')
-    else:
-        form = Newsletterform()
-    context = {
-        'form': form,
-    }
-    return render(request, "Visiteur/news.html", context)
+# def Newsletter(request):
+#     if request.method == 'POST':
+#         form = Newsletterform(request.POST)
+#         if form.is_valid():
+#             news = form.save(commit=False)
+#             news.save()
+#         return redirect('Accueil')
+#     else:
+#         form = Newsletterform()
+#     context = {
+#         'form': form,
+#     }
+#     return render(request, "Visiteur/news.html", context)
