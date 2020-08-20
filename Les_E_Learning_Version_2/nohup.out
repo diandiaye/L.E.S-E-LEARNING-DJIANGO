@@ -343,3 +343,68 @@ Bad Request: /
 Invalid HTTP_HOST header: '0'. You may need to add '0' to ALLOWED_HOSTS.
 Bad Request: /
 [20/Aug/2020 13:04:34] "GET / HTTP/1.1" 400 61710
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py changed, reloading.
+Performing system checks...
+
+August 20, 2020 - 12:19:34
+Django version 3.0.8, using settings 'Les_E_Learning_Version_2.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 345, in execute
+    settings.INSTALLED_APPS
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py", line 130
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 345, in execute
+    settings.INSTALLED_APPS
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py", line 130
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
