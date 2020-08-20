@@ -93,6 +93,40 @@ DATABASES = {
     }
 }
 
+#import pymysql  # noqa: 402
+#pymysql.version_info = (1, 4, 6, 'final', 0)  # change mysqlclient version
+#pymysql.install_as_MySQLdb()
+
+# [START db_setup]
+#if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+ #   DATABASES = {
+  #      'default': {
+   #         'ENGINE': 'django.db.backends.mysql',
+    #        'HOST': '/cloudsql/django-286921:us-central1:les-e-learning',
+     #       'USER': 'falloudiakhate',
+      #      'PASSWORD': 'fallou2810',
+       #     'NAME': 'LesELearningDB',
+       # }
+    #}
+#else:
+    # Running locally so connect to either a local MySQL instance or connect to
+    # Cloud SQL via the proxy. To start the proxy via command line:
+    #
+    #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    #
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+ #   DATABASES = {
+  #      'default': {
+   #         'ENGINE': 'django.db.backends.mysql',
+    #        'HOST': '127.0.0.1',
+     #       'PORT': '3306',
+      #      'NAME': 'LesELearningDB',
+       #     'USER': 'falloudiakhate',
+        #    'PASSWORD': 'fallou2810',
+       # }
+   # }
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -127,12 +161,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-<<<<<<< HEAD
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
-=======
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
->>>>>>> dc2f56ea3a159f2678b83749d32a3044249ad2ba
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATIC_ROOT = "staticfiles"
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
