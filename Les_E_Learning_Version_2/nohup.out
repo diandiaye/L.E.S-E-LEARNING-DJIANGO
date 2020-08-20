@@ -1,0 +1,410 @@
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+Cours.Cours.likes: (fields.W340) null has no effect on ManyToManyField.
+
+System check identified 1 issue (0 silenced).
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+Cours.Cours.likes: (fields.W340) null has no effect on ManyToManyField.
+
+System check identified 1 issue (0 silenced).
+[20/Aug/2020 12:20:07] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:20:10] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:20:10] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:20:11] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:20:17] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:20:18] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:20:18] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:20:18] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:20:21] "GET /contact/ HTTP/1.1" 200 15286
+[20/Aug/2020 12:20:37] "GET /cours/tableau_de_bord HTTP/1.1" 302 0
+[20/Aug/2020 12:20:55] "GET /compte/connection?next=/cours/tableau_de_bord HTTP/1.1" 200 4295
+[20/Aug/2020 12:20:57] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:22:27] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:22:28] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:22:28] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:22:28] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:22:33] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:22:33] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:22:34] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:22:34] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:22:36] "GET /cours/tableau_de_bord HTTP/1.1" 302 0
+[20/Aug/2020 12:22:37] "GET /compte/connection?next=/cours/tableau_de_bord HTTP/1.1" 200 4295
+Not Found: /compte/{% static 'compte/js/main.js
+[20/Aug/2020 12:22:42] "GET /compte/%7B%%20static%20'compte/js/main.js HTTP/1.1" 404 4482
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:22:48] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:22:48] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:22:48] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+[20/Aug/2020 12:22:49] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:22:49] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:22:50] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:22:50] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Blog_Forum/views.py:27: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'Blog_Forum.models.Post'> QuerySet.
+  paginator = Paginator(posts_list,5)
+[20/Aug/2020 12:23:01] "GET /blog/home HTTP/1.1" 200 25611
+Not Found: /media/posts/1.jpg
+[20/Aug/2020 12:23:01] "GET /media/posts/1.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/6.jpg
+[20/Aug/2020 12:23:01] "GET /media/posts/6.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/4.jpg
+[20/Aug/2020 12:23:01] "GET /media/posts/4.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/3_eeYlfTI.jpg
+[20/Aug/2020 12:23:01] "GET /media/posts/3_eeYlfTI.jpg HTTP/1.1" 404 1850
+[20/Aug/2020 12:23:12] "GET / HTTP/1.1" 200 39033
+Not Found: /media/Cours/c7.png
+[20/Aug/2020 12:23:13] "GET /media/Cours/c7.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c4.png
+[20/Aug/2020 12:23:14] "GET /media/Cours/c4.png HTTP/1.1" 404 1829
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:23:14] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:23:19] "GET /admin/ HTTP/1.1" 302 0
+[20/Aug/2020 12:23:19] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1950
+[20/Aug/2020 12:23:20] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[20/Aug/2020 12:23:20] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[20/Aug/2020 12:23:20] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[20/Aug/2020 12:23:20] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[20/Aug/2020 12:23:21] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[20/Aug/2020 12:23:21] "GET /favicon.ico HTTP/1.1" 404 3431
+[20/Aug/2020 12:23:21] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[20/Aug/2020 12:23:32] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[20/Aug/2020 12:23:33] "GET /admin/ HTTP/1.1" 200 12959
+[20/Aug/2020 12:23:33] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[20/Aug/2020 12:23:33] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[20/Aug/2020 12:23:33] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[20/Aug/2020 12:23:33] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[20/Aug/2020 12:23:37] "GET /admin/Cours/cours/ HTTP/1.1" 200 5888
+[20/Aug/2020 12:23:38] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6190
+[20/Aug/2020 12:23:38] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:23:38] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[20/Aug/2020 12:23:38] "GET /static/admin/js/core.js HTTP/1.1" 200 5723
+[20/Aug/2020 12:23:38] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[20/Aug/2020 12:23:38] "GET /static/admin/js/actions.js HTTP/1.1" 200 6766
+[20/Aug/2020 12:23:38] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[20/Aug/2020 12:23:38] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8941
+[20/Aug/2020 12:23:38] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[20/Aug/2020 12:23:39] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[20/Aug/2020 12:23:40] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+Not Found: /media/Cours/c9.jpg
+[20/Aug/2020 12:23:43] "GET /media/Cours/c9.jpg HTTP/1.1" 404 1829
+[20/Aug/2020 12:23:47] "GET /admin/Cours/cours/ HTTP/1.1" 200 5888
+[20/Aug/2020 12:23:49] "GET /admin/Cours/cours/3/change/ HTTP/1.1" 200 9073
+[20/Aug/2020 12:23:49] "GET /static/admin/css/forms.css HTTP/1.1" 200 8518
+[20/Aug/2020 12:23:49] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:23:49] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[20/Aug/2020 12:23:49] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10322
+[20/Aug/2020 12:23:50] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[20/Aug/2020 12:24:05] "POST /admin/Cours/cours/3/change/ HTTP/1.1" 302 0
+[20/Aug/2020 12:24:06] "GET /admin/Cours/cours/ HTTP/1.1" 200 6100
+[20/Aug/2020 12:24:06] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:24:07] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[20/Aug/2020 12:24:09] "GET /admin/Cours/cours/2/change/ HTTP/1.1" 200 8746
+[20/Aug/2020 12:24:10] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:24:32] "POST /admin/Cours/cours/2/change/ HTTP/1.1" 302 0
+[20/Aug/2020 12:24:33] "GET /admin/Cours/cours/ HTTP/1.1" 200 6095
+[20/Aug/2020 12:24:33] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:24:36] "GET /admin/Cours/cours/1/change/ HTTP/1.1" 200 9772
+[20/Aug/2020 12:24:36] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:24:47] "POST /admin/Cours/cours/1/change/ HTTP/1.1" 302 0
+[20/Aug/2020 12:24:48] "GET /admin/Cours/cours/ HTTP/1.1" 200 6104
+[20/Aug/2020 12:24:48] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:24:57] "GET /admin/ HTTP/1.1" 200 12956
+[20/Aug/2020 12:25:03] "GET /admin/Blog_Forum/post/ HTTP/1.1" 200 6666
+[20/Aug/2020 12:25:03] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+Not Found: /media/posts/3_eeYlfTI.jpg
+[20/Aug/2020 12:25:12] "GET /media/posts/3_eeYlfTI.jpg HTTP/1.1" 404 1850
+[20/Aug/2020 12:25:14] "GET /admin/Blog_Forum/post/ HTTP/1.1" 200 6666
+[20/Aug/2020 12:25:16] "GET /admin/Blog_Forum/post/4/change/ HTTP/1.1" 200 9361
+[20/Aug/2020 12:25:17] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+[20/Aug/2020 12:25:27] "POST /admin/Blog_Forum/post/4/change/ HTTP/1.1" 302 0
+[20/Aug/2020 12:25:27] "GET /admin/Blog_Forum/post/ HTTP/1.1" 200 6864
+[20/Aug/2020 12:25:28] "GET /admin/jsi18n/ HTTP/1.1" 200 7403
+Internal Server Error: /admin/Blog_Forum/post/3/change/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 986, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 697, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaultfilters.py", line 42, in _dec
+    args[0] = str(args[0])
+TypeError: __str__ returned non-string (type NoneType)
+[20/Aug/2020 12:25:40] "GET /admin/Blog_Forum/post/3/change/ HTTP/1.1" 500 195433
+[20/Aug/2020 12:25:43] "GET /admin/Blog_Forum/post/ HTTP/1.1" 200 6650
+[20/Aug/2020 12:25:58] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:25:58] "GET /media/Cours/c7.png HTTP/1.1" 200 23953
+[20/Aug/2020 12:25:58] "GET /media/Cours/c4.png HTTP/1.1" 200 42947
+[20/Aug/2020 12:25:58] "GET /media/Cours/c9.jpg HTTP/1.1" 200 157935
+Internal Server Error: /cours/tableau_de_bord
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Cours/views.py", line 231, in Tableau_bord
+    cours_enroll =Cours.objects.filter(membre_cours__membre__id=request.user.membre.id).distinct()
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 225, in inner
+    return func(self._wrapped, *args)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/fields/related_descriptors.py", line 423, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.membre.RelatedObjectDoesNotExist: User has no membre.
+[20/Aug/2020 12:26:00] "GET /cours/tableau_de_bord HTTP/1.1" 500 79614
+[20/Aug/2020 12:26:07] "GET /compte/logout HTTP/1.1" 302 0
+[20/Aug/2020 12:26:08] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:26:08] "GET /media/Cours/c7.png HTTP/1.1" 304 0
+[20/Aug/2020 12:26:08] "GET /media/Cours/c4.png HTTP/1.1" 304 0
+[20/Aug/2020 12:26:11] "GET /cours/tableau_de_bord HTTP/1.1" 302 0
+[20/Aug/2020 12:26:11] "GET /compte/connection?next=/cours/tableau_de_bord HTTP/1.1" 200 4295
+Not Found: /compte/{% static 'compte/js/main.js
+[20/Aug/2020 12:26:12] "GET /compte/%7B%%20static%20'compte/js/main.js HTTP/1.1" 404 4482
+[20/Aug/2020 12:26:15] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:26:16] "GET /media/Cours/c7.png HTTP/1.1" 304 0
+[20/Aug/2020 12:26:16] "GET /media/Cours/c9.jpg HTTP/1.1" 304 0
+[20/Aug/2020 12:26:24] "GET /blog/home HTTP/1.1" 200 25595
+Not Found: /media/posts/1.jpg
+[20/Aug/2020 12:26:24] "GET /media/posts/1.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/6.jpg
+[20/Aug/2020 12:26:24] "GET /media/posts/6.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/4.jpg
+[20/Aug/2020 12:26:24] "GET /media/posts/4.jpg HTTP/1.1" 404 1826
+[20/Aug/2020 12:26:24] "GET /media/posts/3.jpg HTTP/1.1" 200 95505
+[20/Aug/2020 12:26:32] "GET /blog/publication/4 HTTP/1.1" 200 19864
+[20/Aug/2020 12:26:32] "GET /media/posts/3.jpg HTTP/1.1" 304 0
+Not Found: /blog/publication/img/blog/author.png
+[20/Aug/2020 12:26:33] "GET /blog/publication/img/blog/author.png HTTP/1.1" 404 4855
+Not Found: /media/posts/4.jpg
+[20/Aug/2020 12:26:33] "GET /media/posts/4.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/6.jpg
+[20/Aug/2020 12:26:33] "GET /media/posts/6.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/1.jpg
+[20/Aug/2020 12:26:33] "GET /media/posts/1.jpg HTTP/1.1" 404 1826
+[20/Aug/2020 12:26:42] "GET /compte/connection HTTP/1.1" 200 4295
+Not Found: /compte/{% static 'compte/js/main.js
+[20/Aug/2020 12:26:42] "GET /compte/%7B%%20static%20'compte/js/main.js HTTP/1.1" 404 4482
+[20/Aug/2020 12:26:57] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:27:11] "GET /media/Cours/c7.png HTTP/1.1" 200 23953
+[20/Aug/2020 12:27:11] "GET /media/Cours/c4.png HTTP/1.1" 200 42947
+[20/Aug/2020 12:27:12] "GET /media/Cours/c9.jpg HTTP/1.1" 200 157935
+[20/Aug/2020 12:27:14] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:27:21] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:27:36] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:27:37] "GET /media/Cours/c7.png HTTP/1.1" 304 0
+[20/Aug/2020 12:27:37] "GET /media/Cours/c9.jpg HTTP/1.1" 304 0
+[20/Aug/2020 12:27:37] "GET /media/Cours/c4.png HTTP/1.1" 304 0
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Cours/views.py:233: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'Cours.models.Cours'> QuerySet.
+  paginator = Paginator(cours_enroll, 4)
+[20/Aug/2020 12:27:41] "GET /cours/tableau_de_bord HTTP/1.1" 200 13291
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Cours/views.py:181: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'Cours.models.Documents_Cours'> QuerySet.
+  paginator = Paginator(documents, 5)
+[20/Aug/2020 12:27:48] "GET /cours/Terminale%20S/Mathemathique/Limites%20et%20Fonctions HTTP/1.1" 200 24248
+Invalid HTTP_HOST header: 'example.com'. You may need to add 'example.com' to ALLOWED_HOSTS.
+Bad Request: /http:/example.com/
+[20/Aug/2020 12:27:56] "GET http://example.com/ HTTP/1.1" 400 62249
+[20/Aug/2020 12:28:11] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:28:12] "GET /media/Cours/c7.png HTTP/1.1" 304 0
+[20/Aug/2020 12:57:18] "GET /blog/home HTTP/1.1" 200 25595
+Not Found: /media/posts/1.jpg
+[20/Aug/2020 12:57:19] "GET /media/posts/1.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/6.jpg
+[20/Aug/2020 12:57:19] "GET /media/posts/6.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/4.jpg
+[20/Aug/2020 12:57:20] "GET /media/posts/4.jpg HTTP/1.1" 404 1826
+[20/Aug/2020 12:57:20] "GET /media/posts/3.jpg HTTP/1.1" 200 95505
+[20/Aug/2020 12:57:51] "GET /blog/publication/4 HTTP/1.1" 200 19612
+[20/Aug/2020 12:57:52] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/animate.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/owl.carousel.min.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/themify-icons.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/flaticon.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/magnific-popup.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/slick.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/nice-select.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/css/style.css HTTP/1.1" 304 0
+[20/Aug/2020 12:57:52] "GET /static/js/jquery-1.12.1.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/popper.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/jquery.magnific-popup.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/swiper.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/masonry.pkgd.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/owl.carousel.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/img/logo2.png HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/jquery.nice-select.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/slick.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:53] "GET /static/js/jquery.counterup.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:54] "GET /static/js/waypoints.min.js HTTP/1.1" 304 0
+[20/Aug/2020 12:57:54] "GET /static/js/custom.js HTTP/1.1" 304 0
+Not Found: /blog/publication/img/blog/author.png
+[20/Aug/2020 12:57:54] "GET /blog/publication/img/blog/author.png HTTP/1.1" 404 4855
+Not Found: /media/posts/4.jpg
+[20/Aug/2020 12:57:54] "GET /media/posts/4.jpg HTTP/1.1" 404 1826
+[20/Aug/2020 12:57:54] "GET /static/img/4.jpg HTTP/1.1" 304 0
+Not Found: /media/posts/6.jpg
+[20/Aug/2020 12:57:54] "GET /media/posts/6.jpg HTTP/1.1" 404 1826
+Not Found: /media/posts/1.jpg
+[20/Aug/2020 12:57:54] "GET /media/posts/1.jpg HTTP/1.1" 404 1826
+[20/Aug/2020 12:57:55] "GET /static/img/favicon.png HTTP/1.1" 304 0
+[20/Aug/2020 12:58:12] "GET /cours/tableau_de_bord HTTP/1.1" 200 13291
+[20/Aug/2020 12:58:23] "GET /cours/Terminale%20S/Mathemathique/Limites%20et%20Fonctions HTTP/1.1" 200 24248
+[20/Aug/2020 12:58:27] "GET /media/Cours/c7.png HTTP/1.1" 304 0
+[20/Aug/2020 12:58:33] "GET /static/img/cource/cource_1.png HTTP/1.1" 304 0
+[20/Aug/2020 12:58:39] "POST /cours/Terminale%20S/Mathemathique/Limites%20et%20Fonctions HTTP/1.1" 200 25365
+[20/Aug/2020 12:58:50] "GET / HTTP/1.1" 200 39033
+[20/Aug/2020 12:58:51] "GET /cours/Terminale%20S/Mathemathique/Limites%20et%20Fonctions?page=1 HTTP/1.1" 200 25365
+Not Found: /media/AAA_tZtZI8P.pdf
+[20/Aug/2020 12:59:03] "GET /media/AAA_tZtZI8P.pdf HTTP/1.1" 404 1838
+Not Found: /favicon.ico
+[20/Aug/2020 12:59:04] "GET /favicon.ico HTTP/1.1" 404 3431
+Not Found: /media/AAA.pdf
+[20/Aug/2020 12:59:13] "GET /media/AAA.pdf HTTP/1.1" 404 1814
+Not Found: /favicon.ico
+[20/Aug/2020 12:59:17] "GET /favicon.ico HTTP/1.1" 404 3431
+Invalid HTTP_HOST header: 'vm1.us-central1-a.c.leselites-286920.internal'. You may need to add 'vm1.us-central1-a.c.leselites-286920.internal' to ALLOWED_HOSTS.
+Bad Request: /
+[20/Aug/2020 13:04:28] "GET / HTTP/1.0" 400 62106
+Invalid HTTP_HOST header: '0'. You may need to add '0' to ALLOWED_HOSTS.
+Bad Request: /
+[20/Aug/2020 13:04:34] "GET / HTTP/1.1" 400 61710
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py changed, reloading.
+Performing system checks...
+
+August 20, 2020 - 12:19:34
+Django version 3.0.8, using settings 'Les_E_Learning_Version_2.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 345, in execute
+    settings.INSTALLED_APPS
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py", line 130
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/__init__.py", line 345, in execute
+    settings.INSTALLED_APPS
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py", line 130
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax

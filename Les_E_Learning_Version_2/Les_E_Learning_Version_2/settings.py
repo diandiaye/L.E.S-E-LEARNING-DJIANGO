@@ -25,7 +25,7 @@ SECRET_KEY = '****************************************'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "34.66.236.137"]
 
 from django.contrib.messages import constants as messages
 
@@ -127,8 +127,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+<<<<<<< HEAD
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+=======
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+>>>>>>> dc2f56ea3a159f2678b83749d32a3044249ad2ba
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
