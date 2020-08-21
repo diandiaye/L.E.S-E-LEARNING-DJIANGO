@@ -21,7 +21,7 @@ def posts(request):
     if query:
         posts_list = Post.objects.filter(
             Q(title__icontains=query)|
-            Q(author__username__icontains=query)|
+            Q(author_name__icontains=query)|
             Q(content__icontains=query)
         )
     paginator = Paginator(posts_list,5)
@@ -32,6 +32,7 @@ def posts(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
+        
     if request.method == 'POST':
         title = request.POST['title']
         content = request.POST['content']
