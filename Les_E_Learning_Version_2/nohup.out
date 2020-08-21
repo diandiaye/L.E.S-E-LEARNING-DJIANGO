@@ -5337,3 +5337,70 @@ Traceback (most recent call last):
     "Choices are: %s" % (name, ", ".join(available)))
 django.core.exceptions.FieldError: Cannot resolve keyword 'author' into field. Choices are: author_desc, author_name, categorie, comments, content, created, id, likes, photo, tags, title, updated
 [21/Aug/2020 16:18:29] "GET /blog/home?csrfmiddlewaretoken=8DseVXjAlU2KM83qC3oyYx8kZZGC2bhMZp92JNfYrunaEBwjv1nytoBvfsKZUe1G&q=m HTTP/1.1" 500 116017
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Les_E_Learning_Version_2/settings.py changed, reloading.
+Performing system checks...
+
+August 21, 2020 - 00:47:46
+Django version 3.0.8, using settings 'Les_E_Learning_Version_2.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+Cours.Cours.likes: (fields.W340) null has no effect on ManyToManyField.
+
+System check identified 1 issue (0 silenced).
+[21/Aug/2020 16:20:17] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:20:22] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:20:28] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:20:30] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:20:42] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:20:42] "GET /static/css/animate.css HTTP/1.1" 200 77758
+[21/Aug/2020 16:20:43] "GET /static/js/jquery-1.12.1.min.js HTTP/1.1" 200 97403
+[21/Aug/2020 16:20:43] "GET /static/css/flaticon.css HTTP/1.1" 200 971
+[21/Aug/2020 16:20:43] "GET /static/css/themify-icons.css HTTP/1.1" 200 16450
+[21/Aug/2020 16:20:43] "GET /static/css/owl.carousel.min.css HTTP/1.1" 200 3351
+[21/Aug/2020 16:20:44] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 155758
+[21/Aug/2020 16:20:48] "GET /static/css/magnific-popup.css HTTP/1.1" 200 5259
+[21/Aug/2020 16:20:48] "GET /static/css/slick.css HTTP/1.1" 200 1718
+[21/Aug/2020 16:20:48] "GET /static/css/nice-select.css HTTP/1.1" 200 4009
+[21/Aug/2020 16:20:48] "GET /static/js/popper.min.js HTTP/1.1" 200 21004
+[21/Aug/2020 16:20:50] "GET /static/css/style.css HTTP/1.1" 200 203313
+[21/Aug/2020 16:20:51] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 58072
+[21/Aug/2020 16:20:51] "GET /static/js/jquery.magnific-popup.js HTTP/1.1" 200 20216
+[21/Aug/2020 16:20:51] "GET /static/js/masonry.pkgd.js HTTP/1.1" 200 63316
+[21/Aug/2020 16:20:52] "GET /static/js/owl.carousel.min.js HTTP/1.1" 200 44245
+[21/Aug/2020 16:20:56] "GET /static/js/jquery.nice-select.min.js HTTP/1.1" 200 2942
+[21/Aug/2020 16:20:57] "GET /static/js/slick.min.js HTTP/1.1" 200 33293
+[21/Aug/2020 16:20:57] "GET /static/js/swiper.min.js HTTP/1.1" 200 122735
+[21/Aug/2020 16:20:57] "GET /static/js/jquery.counterup.min.js HTTP/1.1" 200 1071
+[21/Aug/2020 16:20:58] "GET /static/js/waypoints.min.js HTTP/1.1" 200 8044
+[21/Aug/2020 16:20:59] "GET /static/js/custom.js HTTP/1.1" 200 3815
+[21/Aug/2020 16:21:01] "GET /static/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[21/Aug/2020 16:21:01] "GET /static/img/logo2.png HTTP/1.1" 200 99495
+[21/Aug/2020 16:21:01] "GET /static/img/banner_bg.png HTTP/1.1" 200 11456
+[21/Aug/2020 16:21:01] "GET /static/img/banner_img.png HTTP/1.1" 200 168983
+[21/Aug/2020 16:21:01] "GET /static/img/learning_img_bg.png HTTP/1.1" 200 11164
+[21/Aug/2020 16:21:03] "GET /static/img/advance_feature_bg.png HTTP/1.1" 200 11167
+[21/Aug/2020 16:21:06] "GET /static/img/quote.png HTTP/1.1" 304 0
+[21/Aug/2020 16:21:06] "GET /static/img/default-avatar.png HTTP/1.1" 200 2864
+[21/Aug/2020 16:21:07] "GET /media/Cours/c11_LZPGQMm.jpg HTTP/1.1" 200 25747
+/home/falloudiakhate/L.E.S-E-LEARNING-DJIANGO/Les_E_Learning_Version_2/Blog_Forum/views.py:27: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'Blog_Forum.models.Post'> QuerySet.
+  paginator = Paginator(posts_list,5)
+[21/Aug/2020 16:21:09] "GET /blog/home HTTP/1.1" 200 16501
+[21/Aug/2020 16:21:09] "GET /static/img/4.jpg HTTP/1.1" 304 0
+[21/Aug/2020 16:21:11] "GET /media/posts/4.jpg HTTP/1.1" 200 238926
+[21/Aug/2020 16:21:17] "GET /blog/home?csrfmiddlewaretoken=FUc5YpXcqwW2fvgOXqKqTLpbzCY2QWUbGCmEH2wsBqJXnOn5LzXCdNWfkcz34dUb&q=c HTTP/1.1" 200 16501
+[21/Aug/2020 16:21:18] "GET /static/css/animate.css HTTP/1.1" 200 77758
+[21/Aug/2020 16:21:18] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 106496
+[21/Aug/2020 16:21:24] "GET /blog/home?csrfmiddlewaretoken=VSpESaSsO22BKGom5636A5rvLmeRBNmeWAzdBNrIZWPwSZvDTfgiU7YzwWPSP4me&q=a HTTP/1.1" 200 16501
+[21/Aug/2020 16:21:32] "GET /blog/home?csrfmiddlewaretoken=ERMd8cEb7WDmDRsKkGFYjRY64Elgbt5lFzWMRPdriQqhLaz18PSaDTvaPeWhpK5l&q=xxxx HTTP/1.1" 200 15259
+[21/Aug/2020 16:21:37] "GET / HTTP/1.1" 200 36034
+[21/Aug/2020 16:21:38] "GET /static/img/learning_img_bg.png HTTP/1.1" 200 11164
+[21/Aug/2020 16:21:38] "GET /static/img/advance_feature_img.png HTTP/1.1" 304 0
+[21/Aug/2020 16:21:38] "GET /static/img/advance_feature_bg.png HTTP/1.1" 200 11167
+[21/Aug/2020 16:21:38] "GET /static/img/default-avatar.png HTTP/1.1" 304 0
+[21/Aug/2020 16:21:39] "GET /media/Cours/c11_LZPGQMm.jpg HTTP/1.1" 304 0
+[21/Aug/2020 16:21:39] "GET /static/img/quote.png HTTP/1.1" 304 0
+[21/Aug/2020 16:21:39] "GET /static/img/banner_img.png HTTP/1.1" 200 168983
