@@ -1,0 +1,75 @@
+{% block content %}
+
+{% load static %}
+
+<!--::header part start::-->
+ <header class="main_menu home_menu">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="{% url 'Accueil' %}"> <img src="{% static 'img/logo2.png'  %}" width="100" height="80" alt="Les-E_Learning"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'Accueil' %}">Accueil</a>
+                            </li>
+ 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'Cours_niveau' %}">Cours</a>
+                            </li>
+                        
+                <!--            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Communauté
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'list_posts' %}">Blog</a>
+                                    <!-- <a class="dropdown-item" href="{% url 'forum' %}">Forum</a> -->
+                                </div>
+                            </li>
+                             <!- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Nos Contacts
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url  'Contact' %}">Nos Contacts</a>
+                                    <a class="dropdown-item" href="{% url 'Newsletter' %}">Newsletter</a>
+                                </div>
+                            </li> -->
+                           
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Compte
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'OuvrirCompte' %}">Ouvrir un compte</a>
+                                    <a class="dropdown-item" href="{% url 'Connection' %}">Se connecter</a>
+                                    <a class="dropdown-item" href="{% url 'Logout' %}">Se déconnecter</a>
+                                    <a class="dropdown-item" href="{% url 'Modifier' %}">Modifier son profil</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'Tableau_bord' %}" >Mes Cours</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'Contact' %}">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header part end-->
+
+{% endblock content %}

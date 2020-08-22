@@ -173,7 +173,11 @@ def poemes(request):
     if query:
         list_poemes = Poeme.objects.filter(
             Q(titre__icontains=query)|
+<<<<<<< HEAD
             # Q(auteur__first_name__icontains=query)|
+=======
+#            Q(auteur__first_name__icontains=query)|
+>>>>>>> 1dcff875c1f40734315db72ab7b39db56966fa47
             Q(contenu__icontains=query)
         )
     paginator = Paginator(list_poemes,5)
