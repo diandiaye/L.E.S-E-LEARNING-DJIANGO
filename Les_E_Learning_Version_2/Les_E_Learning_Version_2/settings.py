@@ -24,8 +24,7 @@ SECRET_KEY = '****************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "34.66.236.137"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "34.66.236.137", "les-e-learning.sn", "www.les-e-learning.sn"]
 
 from django.contrib.messages import constants as messages
 
