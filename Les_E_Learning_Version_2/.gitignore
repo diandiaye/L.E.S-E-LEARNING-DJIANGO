@@ -102,7 +102,6 @@ ENV/
 
 .DS_Store
 staticfiles
-media/
 *.pyc
 *.pid
 # django migrations 
